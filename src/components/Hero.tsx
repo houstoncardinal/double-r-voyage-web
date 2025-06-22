@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Truck, Shield, Clock, Star, CheckCircle, Sparkles } from "lucide-react";
 import { CarTransportAnimation } from "./CarTransportAnimation";
@@ -125,69 +126,56 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Ultra-Enhanced Premium CTA Box with Maximum Luxury */}
-            <div className="relative group overflow-hidden rounded-[2rem] border-4 border-transparent bg-gradient-to-br from-violet-600 via-blue-600 to-cyan-600 p-1 shadow-[0_0_50px_rgba(59,130,246,0.5)] hover:shadow-[0_0_100px_rgba(59,130,246,0.8)] transition-all duration-700 animate-glow">
-              {/* Ultra-Premium Animated Background Layers */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-700 to-cyan-700 animate-pulse"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/40 via-violet-500/30 to-cyan-400/40 animate-float"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer opacity-60"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-blue-500/20 animate-pulse" style={{animationDelay: '1s'}}></div>
+            {/* Luxury Truck Animation Banner - Replacing Premium CTA */}
+            <div className="relative group overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 luxury-shadow-2xl border border-white/10">
+              {/* Background animation layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-cyan-500/5 to-blue-600/10 animate-shimmer"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer opacity-60"></div>
               
-              {/* Multiple Floating Orbs for Maximum Effect */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-cyan-300/60 to-blue-300/60 rounded-full blur-2xl animate-float group-hover:scale-150 transition-transform duration-1000"></div>
-              <div className="absolute -bottom-10 -left-10 w-28 h-28 bg-gradient-to-br from-violet-300/60 to-purple-300/60 rounded-full blur-2xl animate-float group-hover:scale-150 transition-transform duration-1000" style={{animationDelay: '2s'}}></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-br from-white/20 to-cyan-200/20 rounded-full blur-xl animate-pulse"></div>
+              {/* Floating orbs */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-cyan-300/20 to-blue-300/20 rounded-full blur-2xl animate-float"></div>
+              <div className="absolute -bottom-10 -left-10 w-28 h-28 bg-gradient-to-br from-violet-300/20 to-purple-300/20 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
               
-              {/* Multiple Border Effects */}
-              <div className="absolute inset-0 rounded-[2rem] border-2 border-white/30 group-hover:border-white/50 transition-colors duration-500"></div>
-              <div className="absolute inset-0 rounded-[2rem] border border-cyan-300/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
-              <div className="absolute inset-0 rounded-[2rem] shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] group-hover:shadow-[inset_0_0_80px_rgba(255,255,255,0.2)] transition-shadow duration-700"></div>
-              
-              {/* Inner Content Container with Glass Effect */}
-              <div className="relative z-10 bg-gradient-to-br from-slate-900/95 via-blue-900/95 to-slate-900/95 backdrop-blur-xl rounded-[1.7rem] p-8 border border-white/10">
-                {/* Animated Header Section */}
-                <div className="mb-8">
-                  <div className="flex items-center mb-6 group-hover:scale-105 transition-transform duration-500">
-                    <div className="bg-gradient-to-br from-white/30 to-cyan-200/30 backdrop-blur-sm rounded-full p-3 mr-4 animate-pulse shadow-[0_0_30px_rgba(59,130,246,0.5)]">
-                      <Sparkles className="h-8 w-8 text-white animate-spin" style={{animationDuration: '3s'}} />
+              <div className="relative z-10 p-8">
+                {/* Header */}
+                <div className="mb-6 text-center">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="bg-gradient-to-br from-white/20 to-cyan-200/20 backdrop-blur-sm rounded-full p-3 mr-4 luxury-shadow">
+                      <Truck className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight bg-gradient-to-r from-white via-cyan-100 to-white bg-clip-text text-transparent">
-                      Ready to Optimize Your Logistics?
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                      Double R Transportation LLC
                     </h3>
                   </div>
-                  <p className="text-blue-100/90 text-lg sm:text-xl leading-relaxed font-light tracking-wide group-hover:text-white transition-colors duration-500">
-                    Partner with industry professionals who deliver consistent results through proven processes, 
-                    advanced technology, and unwavering commitment to excellence.
+                  <p className="text-blue-100/90 text-lg leading-relaxed font-light tracking-wide">
+                    Premium logistics solutions with nationwide coverage and uncompromising excellence.
                   </p>
                 </div>
                 
-                {/* Floating Decorative Elements */}
-                <div className="absolute top-6 right-6 flex space-x-3 opacity-60">
-                  <div className="w-3 h-3 bg-white rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.8)]"></div>
-                  <div className="w-3 h-3 bg-cyan-200 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,211,238,0.8)]" style={{animationDelay: '0.5s'}}></div>
-                  <div className="w-3 h-3 bg-white rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.8)]" style={{animationDelay: '1s'}}></div>
+                {/* Luxury Truck Animation */}
+                <div className="relative h-48 mb-6 overflow-hidden rounded-xl">
+                  <CarTransportAnimation />
                 </div>
                 
-                {/* Ultra-Premium CTA Button */}
-                <Button 
-                  size="lg" 
-                  className="w-full bg-gradient-to-r from-white via-cyan-50 to-white hover:from-cyan-50 hover:via-white hover:to-cyan-50 text-slate-900 hover:text-slate-800 rounded-2xl px-8 py-6 text-xl font-bold tracking-wide transition-all duration-700 group/btn shadow-[0_20px_50px_rgba(255,255,255,0.3)] hover:shadow-[0_30px_80px_rgba(255,255,255,0.5)] border-2 border-white/20 hover:border-white/40 hover:scale-105 transform"
-                >
-                  <div className="flex items-center justify-center relative z-10">
-                    <Sparkles className="mr-4 h-6 w-6 group-hover/btn:rotate-180 group-hover/btn:scale-125 transition-all duration-700 text-blue-600 animate-pulse" />
-                    <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-slate-900 bg-clip-text text-transparent font-bold text-xl">
-                      Get Premium Quote
-                    </span>
-                    <ArrowRight className="ml-4 h-6 w-6 group-hover/btn:translate-x-3 group-hover/btn:scale-125 transition-all duration-700 text-blue-600 animate-pulse" style={{animationDelay: '0.5s'}} />
-                  </div>
-                  {/* Button Background Animation */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50/20 via-white/10 to-cyan-50/20 rounded-2xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700 animate-shimmer"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-2xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
-                </Button>
-                
-                {/* Premium Decorative Bottom Border */}
-                <div className="absolute bottom-4 left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:via-white/50 transition-colors duration-500"></div>
-                <div className="absolute bottom-3 left-12 right-12 h-px bg-gradient-to-r from-transparent via-cyan-300/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-white via-cyan-50 to-white hover:from-cyan-50 hover:via-white hover:to-cyan-50 text-slate-900 hover:text-slate-800 rounded-xl px-6 py-3 text-lg font-bold tracking-wide transition-all duration-500 group/btn luxury-shadow-xl hover:luxury-shadow-2xl border-2 border-white/20 hover:border-white/40"
+                  >
+                    <Sparkles className="mr-3 h-5 w-5 group-hover/btn:rotate-180 transition-all duration-500 text-blue-600" />
+                    Get Premium Quote
+                    <ArrowRight className="ml-3 h-5 w-5 group-hover/btn:translate-x-2 transition-all duration-500 text-blue-600" />
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="border-2 border-white/30 hover:border-white/50 text-white hover:bg-white/10 rounded-xl px-6 py-3 text-lg font-semibold tracking-wide transition-all duration-500 backdrop-blur-sm"
+                  >
+                    <Phone className="mr-3 h-5 w-5" />
+                    (832) 282-3128
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
