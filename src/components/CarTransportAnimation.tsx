@@ -118,7 +118,10 @@ export const CarTransportAnimation = () => {
             {/* Dynamic loading cars - moving from left to positions */}
             
             {/* Car Loading 1 - Blue car moving to bottom level position 1 */}
-            <g className="animate-[loadCar1_8s_ease-in-out_infinite]">
+            <g style={{
+              animation: 'loadCar1 8s ease-in-out infinite',
+              transformOrigin: 'center'
+            }}>
               <rect
                 x="30"
                 y="170"
@@ -136,7 +139,11 @@ export const CarTransportAnimation = () => {
             </g>
             
             {/* Car Loading 2 - Silver car moving to bottom level position 2 */}
-            <g className="animate-[loadCar2_8s_ease-in-out_infinite]" style={{animationDelay: '1s'}}>
+            <g style={{
+              animation: 'loadCar2 8s ease-in-out infinite',
+              animationDelay: '1s',
+              transformOrigin: 'center'
+            }}>
               <rect
                 x="30"
                 y="170"
@@ -154,7 +161,11 @@ export const CarTransportAnimation = () => {
             </g>
             
             {/* Car Loading 3 - Gold car moving to top level position 1 */}
-            <g className="animate-[loadCar3_8s_ease-in-out_infinite]" style={{animationDelay: '2s'}}>
+            <g style={{
+              animation: 'loadCar3 8s ease-in-out infinite',
+              animationDelay: '2s',
+              transformOrigin: 'center'
+            }}>
               <rect
                 x="30"
                 y="170"
@@ -174,7 +185,11 @@ export const CarTransportAnimation = () => {
             {/* Dynamic unloading cars - moving from positions to right */}
             
             {/* Car Unloading 1 - Pearl car moving from top level position 2 to unloading area */}
-            <g className="animate-[unloadCar1_8s_ease-in-out_infinite]" style={{animationDelay: '4s'}}>
+            <g style={{
+              animation: 'unloadCar1 8s ease-in-out infinite',
+              animationDelay: '4s',
+              transformOrigin: 'center'
+            }}>
               <rect
                 x="230"
                 y="45"
@@ -192,7 +207,11 @@ export const CarTransportAnimation = () => {
             </g>
             
             {/* Car Unloading 2 - Red car moving from bottom level position 3 to unloading area */}
-            <g className="animate-[unloadCar2_8s_ease-in-out_infinite]" style={{animationDelay: '5s'}}>
+            <g style={{
+              animation: 'unloadCar2 8s ease-in-out infinite',
+              animationDelay: '5s',
+              transformOrigin: 'center'
+            }}>
               <rect
                 x="310"
                 y="115"
@@ -210,7 +229,11 @@ export const CarTransportAnimation = () => {
             </g>
             
             {/* Car Unloading 3 - Green car moving from top level position 3 to unloading area */}
-            <g className="animate-[unloadCar3_8s_ease-in-out_infinite]" style={{animationDelay: '6s'}}>
+            <g style={{
+              animation: 'unloadCar3 8s ease-in-out infinite',
+              animationDelay: '6s',
+              transformOrigin: 'center'
+            }}>
               <rect
                 x="320"
                 y="45"
@@ -350,8 +373,9 @@ export const CarTransportAnimation = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer opacity-80"></div>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
       
-      {/* Dynamic loading/unloading animations */}
-      <style jsx>{`
+      {/* Global CSS for car animations */}
+      <style>
+        {`
         @keyframes loadCar1 {
           0% { transform: translateX(0) translateY(0); }
           25% { transform: translateX(100px) translateY(-55px); }
@@ -393,7 +417,8 @@ export const CarTransportAnimation = () => {
           50% { transform: translateX(380px) translateY(125px); }
           100% { transform: translateX(0) translateY(0); }
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
