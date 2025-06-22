@@ -15,6 +15,13 @@ export const Hero = () => {
         <div className="absolute top-32 left-1/4 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-br from-gold-300/20 to-yellow-300/20 rounded-full animate-glow blur-xl"></div>
         <div className="absolute bottom-32 right-1/4 w-24 sm:w-40 h-24 sm:h-40 bg-gradient-to-br from-emerald-300/20 to-teal-300/20 rounded-full animate-glow blur-xl" style={{animationDelay: '2s'}}></div>
       </div>
+
+      {/* Background Car Transport Animation */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+        <div className="w-full max-w-4xl">
+          <CarTransportAnimation />
+        </div>
+      </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start w-full">
@@ -87,21 +94,8 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Enhanced with truck animation */}
+          {/* Right Content - Enhanced services cards */}
           <div className="space-y-4 sm:space-y-6 animate-slide-in-right mt-8 lg:mt-0">
-            {/* Animated Car Transport Truck */}
-            <div className="glass-effect rounded-xl sm:rounded-2xl p-4 sm:p-6 luxury-shadow-2xl border border-white/30 luxury-card-hover">
-              <div className="mb-4">
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 tracking-tight mb-2 text-center">Premium Auto Transport</h3>
-                <p className="text-blue-600 font-semibold text-sm sm:text-base tracking-wide text-center mb-4">Nationwide Coverage • Real-Time Tracking</p>
-              </div>
-              <CarTransportAnimation />
-              <div className="flex items-center justify-center text-emerald-600 mt-4">
-                <CheckCircle className="h-4 w-4 mr-2" />
-                <span className="font-medium text-sm tracking-wide">Licensed & Insured Fleet</span>
-              </div>
-            </div>
-
             <div className="glass-effect rounded-xl sm:rounded-2xl p-4 sm:p-6 luxury-shadow-2xl border border-white/30 luxury-card-hover">
               <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4">
                 <div className="bg-gradient-to-br from-blue-100 via-blue-50 to-blue-100 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center luxury-shadow">
