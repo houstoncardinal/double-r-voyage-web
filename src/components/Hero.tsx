@@ -123,17 +123,61 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white luxury-shadow-2xl luxury-card-hover relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-xl sm:rounded-2xl animate-pulse"></div>
-              <div className="relative z-10">
-                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 tracking-tight">Ready for Premium Service?</h3>
-                <p className="mb-4 sm:mb-6 opacity-90 text-blue-50 text-sm sm:text-base leading-relaxed">Experience the Double R Transportation difference with our concierge logistics team.</p>
-                <Button variant="secondary" className="w-full sm:w-auto bg-white/95 hover:bg-white text-blue-600 hover:text-blue-700 rounded-xl px-4 sm:px-6 py-2 sm:py-3 luxury-shadow hover:luxury-shadow-xl transition-all duration-500 group backdrop-blur-sm font-semibold text-sm sm:text-base tracking-wide">
-                  <Sparkles className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-500" />
-                  <span className="hidden sm:inline">Get Started Today</span>
-                  <span className="sm:hidden">Get Started</span>
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-500" />
+            {/* Enhanced Premium CTA Box with Luxury Aesthetics */}
+            <div className="relative group overflow-hidden rounded-3xl sm:rounded-3xl luxury-shadow-2xl hover:luxury-shadow-[0_60px_120px_rgba(0,0,0,0.35)] transition-all duration-700 luxury-card-hover">
+              {/* Animated background layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/30 via-cyan-400/20 to-blue-600/30 animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-70 animate-shimmer"></div>
+              
+              {/* Animated glow effects */}
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-cyan-300/40 to-blue-300/40 rounded-full blur-3xl animate-float group-hover:scale-150 transition-transform duration-1000"></div>
+              <div className="absolute -bottom-20 -left-20 w-32 h-32 bg-gradient-to-br from-blue-300/40 to-purple-300/40 rounded-full blur-2xl animate-float group-hover:scale-150 transition-transform duration-1000" style={{animationDelay: '2s'}}></div>
+              
+              {/* Premium border glow */}
+              <div className="absolute inset-0 rounded-3xl border-2 border-white/20 group-hover:border-white/40 transition-colors duration-500"></div>
+              <div className="absolute inset-0 rounded-3xl border border-cyan-300/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+              
+              {/* Content */}
+              <div className="relative z-10 p-6 sm:p-8">
+                <div className="mb-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 mr-3 animate-pulse">
+                      <Sparkles className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-tight">
+                      Ready to Optimize Your Logistics?
+                    </h3>
+                  </div>
+                  <p className="text-blue-50/90 text-base sm:text-lg leading-relaxed font-light tracking-wide">
+                    Partner with industry professionals who deliver consistent results through proven processes, 
+                    advanced technology, and unwavering commitment to excellence.
+                  </p>
+                </div>
+                
+                {/* Premium floating elements */}
+                <div className="absolute top-4 right-4 flex space-x-2 opacity-40">
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-cyan-200 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                </div>
+                
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-white/95 hover:bg-white text-blue-700 hover:text-blue-800 rounded-2xl px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg font-bold tracking-wide transition-all duration-500 group/btn luxury-shadow-xl hover:luxury-shadow-2xl backdrop-blur-sm border border-white/20 hover:border-white/40 hover:scale-105"
+                >
+                  <div className="flex items-center justify-center">
+                    <Sparkles className="mr-3 h-5 w-5 group-hover/btn:rotate-12 group-hover/btn:scale-110 transition-all duration-500 text-blue-600" />
+                    <span className="bg-gradient-to-r from-blue-700 to-cyan-600 bg-clip-text text-transparent font-bold">
+                      Get Premium Quote
+                    </span>
+                    <ArrowRight className="ml-3 h-5 w-5 group-hover/btn:translate-x-2 group-hover/btn:scale-110 transition-all duration-500 text-blue-600" />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50/20 to-cyan-50/20 rounded-2xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                 </Button>
+                
+                {/* Subtle decorative elements */}
+                <div className="absolute bottom-2 left-6 right-6 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
               </div>
             </div>
           </div>
@@ -142,18 +186,14 @@ export const Hero = () => {
 
       {/* Luxury Scrolling Banner - Enhanced with more spacing and premium styling */}
       <div className="relative z-10 w-full mt-16 sm:mt-20 lg:mt-24">
-        {/* Elegant top border with gradient */}
         <div className="h-px bg-gradient-to-r from-transparent via-blue-300/50 to-transparent"></div>
         
-        {/* Main banner with luxury styling */}
         <div className="bg-gradient-to-r from-blue-800 via-blue-700 to-blue-800 relative overflow-hidden">
-          {/* Subtle animated background pattern */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-cyan-500/10 to-blue-600/20 animate-shimmer"></div>
           <div className="absolute inset-0">
             <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-blue-900/30 via-transparent to-blue-900/30"></div>
           </div>
           
-          {/* Content */}
           <div className="relative z-10 py-5 sm:py-6">
             <div className="animate-marquee whitespace-nowrap">
               <span className="text-white font-bold text-lg sm:text-xl tracking-wide mx-12 inline-flex items-center">
@@ -192,7 +232,6 @@ export const Hero = () => {
           </div>
         </div>
         
-        {/* Elegant bottom border with gradient */}
         <div className="h-px bg-gradient-to-r from-transparent via-blue-300/50 to-transparent"></div>
       </div>
     </section>
