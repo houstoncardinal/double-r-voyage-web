@@ -1,9 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Truck, Shield, Clock, Star, CheckCircle, Sparkles } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-32 overflow-hidden min-h-screen flex items-center">
+    <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 pt-32 sm:pt-40 lg:pt-48 pb-0 overflow-hidden min-h-screen flex flex-col">
       {/* Premium background decoration with enhanced effects */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-10 sm:right-20 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-br from-blue-200/60 to-cyan-200/60 rounded-full opacity-70 animate-float blur-3xl"></div>
@@ -15,8 +16,8 @@ export const Hero = () => {
         <div className="absolute bottom-32 right-1/4 w-24 sm:w-40 h-24 sm:h-40 bg-gradient-to-br from-emerald-300/20 to-teal-300/20 rounded-full animate-glow blur-xl" style={{animationDelay: '2s'}}></div>
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start w-full">
           {/* Left Content - Enhanced for mobile */}
           <div className="space-y-6 lg:space-y-8 animate-slide-in-left text-center lg:text-left">
             <div className="space-y-4 lg:space-y-6">
@@ -136,6 +137,36 @@ export const Hero = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Scrolling Text Banner at bottom */}
+      <div className="relative z-10 w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 py-4 overflow-hidden">
+        <div className="animate-marquee whitespace-nowrap">
+          <span className="text-white font-semibold text-lg tracking-wide mx-8">
+            🚛 Premium Auto Transport Services
+          </span>
+          <span className="text-white font-semibold text-lg tracking-wide mx-8">
+            🛡️ Fully Licensed & Insured
+          </span>
+          <span className="text-white font-semibold text-lg tracking-wide mx-8">
+            📍 Nationwide Coverage
+          </span>
+          <span className="text-white font-semibold text-lg tracking-wide mx-8">
+            ⭐ 24/7 Customer Support
+          </span>
+          <span className="text-white font-semibold text-lg tracking-wide mx-8">
+            🚛 Premium Auto Transport Services
+          </span>
+          <span className="text-white font-semibold text-lg tracking-wide mx-8">
+            🛡️ Fully Licensed & Insured
+          </span>
+          <span className="text-white font-semibold text-lg tracking-wide mx-8">
+            📍 Nationwide Coverage
+          </span>
+          <span className="text-white font-semibold text-lg tracking-wide mx-8">
+            ⭐ 24/7 Customer Support
+          </span>
         </div>
       </div>
     </section>
