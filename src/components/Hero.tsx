@@ -125,59 +125,6 @@ export const Hero = () => {
                 <span className="font-medium text-sm tracking-wide">Certified & Compliant</span>
               </div>
             </div>
-
-            {/* Luxury Truck Animation Banner - Replacing Premium CTA */}
-            <div className="relative group overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 luxury-shadow-2xl border border-white/10">
-              {/* Background animation layers */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-cyan-500/5 to-blue-600/10 animate-shimmer"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer opacity-60"></div>
-              
-              {/* Floating orbs */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-cyan-300/20 to-blue-300/20 rounded-full blur-2xl animate-float"></div>
-              <div className="absolute -bottom-10 -left-10 w-28 h-28 bg-gradient-to-br from-violet-300/20 to-purple-300/20 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
-              
-              <div className="relative z-10 p-8">
-                {/* Header */}
-                <div className="mb-6 text-center">
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="bg-gradient-to-br from-white/20 to-cyan-200/20 backdrop-blur-sm rounded-full p-3 mr-4 luxury-shadow">
-                      <Truck className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                      Double R Transportation LLC
-                    </h3>
-                  </div>
-                  <p className="text-blue-100/90 text-lg leading-relaxed font-light tracking-wide">
-                    Premium logistics solutions with nationwide coverage and uncompromising excellence.
-                  </p>
-                </div>
-                
-                {/* Luxury Truck Animation */}
-                <div className="relative h-48 mb-6 overflow-hidden rounded-xl">
-                  <CarTransportAnimation />
-                </div>
-                
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Button 
-                    size="lg" 
-                    className="bg-gradient-to-r from-white via-cyan-50 to-white hover:from-cyan-50 hover:via-white hover:to-cyan-50 text-slate-900 hover:text-slate-800 rounded-xl px-6 py-3 text-lg font-bold tracking-wide transition-all duration-500 group/btn luxury-shadow-xl hover:luxury-shadow-2xl border-2 border-white/20 hover:border-white/40"
-                  >
-                    <Sparkles className="mr-3 h-5 w-5 group-hover/btn:rotate-180 transition-all duration-500 text-blue-600" />
-                    Get Premium Quote
-                    <ArrowRight className="ml-3 h-5 w-5 group-hover/btn:translate-x-2 transition-all duration-500 text-blue-600" />
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-2 border-white/30 hover:border-white/50 text-white hover:bg-white/10 rounded-xl px-6 py-3 text-lg font-semibold tracking-wide transition-all duration-500 backdrop-blur-sm"
-                  >
-                    <Phone className="mr-3 h-5 w-5" />
-                    (832) 282-3128
-                  </Button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

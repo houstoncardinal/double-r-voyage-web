@@ -1,7 +1,8 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Truck, Shield, Package, Zap, ArrowRight, CheckCircle2, Phone, Award } from "lucide-react";
+import { Truck, Shield, Package, Zap, ArrowRight, CheckCircle2, Phone, Award, Sparkles } from "lucide-react";
+import { CarTransportAnimation } from "./CarTransportAnimation";
 
 const services = [
   {
@@ -153,37 +154,53 @@ export const Services = () => {
           ))}
         </div>
 
-        {/* Professional CTA Section */}
-        <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-12 lg:p-16 text-center text-white luxury-shadow-2xl overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute inset-0">
-            <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-10 left-10 w-48 h-48 bg-gradient-to-br from-blue-600/10 to-blue-400/10 rounded-full blur-2xl"></div>
-          </div>
+        {/* Luxury Truck Animation Banner - Replacing the CTA Section */}
+        <div className="relative group overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 luxury-shadow-2xl border border-white/10">
+          {/* Background animation layers */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-cyan-500/5 to-blue-600/10 animate-shimmer"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer opacity-60"></div>
           
-          <div className="relative z-10">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white tracking-tight">
-              Ready to Optimize Your Logistics?
-            </h3>
-            <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Partner with industry professionals who deliver consistent results through 
-              proven processes, advanced technology, and unwavering commitment to excellence.
-            </p>
+          {/* Floating orbs */}
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-cyan-300/20 to-blue-300/20 rounded-full blur-2xl animate-float"></div>
+          <div className="absolute -bottom-10 -left-10 w-28 h-28 bg-gradient-to-br from-violet-300/20 to-purple-300/20 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
+          
+          <div className="relative z-10 p-8">
+            {/* Header */}
+            <div className="mb-6 text-center">
+              <div className="flex items-center justify-center mb-4">
+                <div className="bg-gradient-to-br from-white/20 to-cyan-200/20 backdrop-blur-sm rounded-full p-3 mr-4 luxury-shadow">
+                  <Truck className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                  Double R Transportation LLC
+                </h3>
+              </div>
+              <p className="text-blue-100/90 text-lg leading-relaxed font-light tracking-wide">
+                Premium logistics solutions with nationwide coverage and uncompromising excellence.
+              </p>
+            </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* Luxury Truck Animation */}
+            <div className="relative h-48 mb-6 overflow-hidden rounded-xl">
+              <CarTransportAnimation />
+            </div>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 text-lg font-semibold rounded-xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group border-0"
+                className="bg-gradient-to-r from-white via-cyan-50 to-white hover:from-cyan-50 hover:via-white hover:to-cyan-50 text-slate-900 hover:text-slate-800 rounded-xl px-6 py-3 text-lg font-bold tracking-wide transition-all duration-500 group/btn luxury-shadow-xl hover:luxury-shadow-2xl border-2 border-white/20 hover:border-white/40"
               >
-                Get Quote
-                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <Sparkles className="mr-3 h-5 w-5 group-hover/btn:rotate-180 transition-all duration-500 text-blue-600" />
+                Get Premium Quote
+                <ArrowRight className="ml-3 h-5 w-5 group-hover/btn:translate-x-2 transition-all duration-500 text-blue-600" />
               </Button>
-              
               <Button 
                 size="lg" 
-                className="bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white/50 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-500 group backdrop-blur-sm"
+                variant="outline"
+                className="border-2 border-white/30 hover:border-white/50 text-white hover:bg-white/10 rounded-xl px-6 py-3 text-lg font-semibold tracking-wide transition-all duration-500 backdrop-blur-sm"
               >
-                <Phone className="mr-3 h-5 w-5 group-hover:rotate-12 transition-transform duration-500" />
+                <Phone className="mr-3 h-5 w-5" />
                 (832) 282-3128
               </Button>
             </div>
