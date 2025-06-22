@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Truck, Shield, Clock, Star, CheckCircle, Sparkles } from "lucide-react";
 
@@ -27,7 +26,7 @@ export const Hero = () => {
                 <div className="ml-2 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               </div>
               
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.85] tracking-tight">
+              <h1 className="relative z-50 text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.8] tracking-tight">
                 <span className="block bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent text-shadow-lg">
                   Delivering
                 </span>
