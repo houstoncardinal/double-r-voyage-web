@@ -77,27 +77,6 @@ export const Services = () => {
           </p>
         </div>
 
-        {/* Clean Stats Section without icons */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {stats.map((stat, index) => (
-            <div key={stat.label} className="group">
-              <div className="bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-gray-900 mb-3">
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-900 font-semibold text-lg mb-2">
-                    {stat.label}
-                  </div>
-                  <div className="text-gray-600 text-sm leading-relaxed">
-                    {stat.description}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* Professional Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           {services.map((service, index) => {
@@ -146,6 +125,27 @@ export const Services = () => {
               </Card>
             );
           })}
+        </div>
+
+        {/* Clean Stats Section - Now below service cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {stats.map((stat, index) => (
+            <div key={stat.label} className="group">
+              <div className="bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-gray-900 mb-3">
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-900 font-semibold text-lg mb-2">
+                    {stat.label}
+                  </div>
+                  <div className="text-gray-600 text-sm leading-relaxed">
+                    {stat.description}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Professional CTA Section */}
