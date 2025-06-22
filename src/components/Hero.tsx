@@ -27,7 +27,7 @@ export const Hero = () => {
                 <div className="ml-2 sm:ml-3 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               </div>
               
-              <h1 className="mobile-hero-scale lg:text-9xl font-bold leading-[0.9] tracking-tight">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.85] tracking-tight">
                 <span className="block bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent text-shadow-lg">
                   Delivering
                 </span>
