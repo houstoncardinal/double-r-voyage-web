@@ -55,20 +55,25 @@ const stats = [
 
 export const Services = () => {
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 to-white"></div>
+    <section className="relative py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
+      {/* Background decoration matching your site aesthetic */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-200/40 to-cyan-200/40 rounded-full opacity-60 animate-float blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-blue-300/30 to-blue-100/30 rounded-full opacity-50 animate-float blur-2xl" style={{animationDelay: '3s'}}></div>
+      </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Professional Header */}
+        {/* Header Section */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm mb-6">
-            <Award className="h-4 w-4 text-gray-600 mr-2" />
-            <span className="text-gray-700 font-medium text-sm">Professional Services</span>
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-50 via-white to-blue-50 border border-blue-200/50 luxury-shadow backdrop-blur-sm mb-8">
+            <Award className="h-5 w-5 text-blue-600 mr-3" />
+            <span className="text-blue-700 font-semibold text-lg tracking-wide">Professional Services</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 tracking-tight">
-            Transportation Solutions
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+            <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+              Transportation Solutions
+            </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -77,21 +82,21 @@ export const Services = () => {
           </p>
         </div>
 
-        {/* Professional Services Grid */}
+        {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Card key={service.title} className="group border border-gray-200 bg-white shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-lg overflow-hidden">
+              <Card key={service.title} className="group glass-effect border border-blue-200/30 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 rounded-2xl overflow-hidden luxury-card-hover">
                 <CardHeader className="pb-6 pt-8 px-8">
                   <div className="flex items-start space-x-6 mb-6">
-                    {/* Minimalist icon design */}
-                    <div className="w-14 h-14 rounded-lg bg-gray-900 flex items-center justify-center group-hover:bg-gray-800 transition-colors duration-300">
-                      <Icon className="h-7 w-7 text-white" />
+                    {/* Blue gradient icon design */}
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center group-hover:from-blue-700 group-hover:to-blue-800 transition-all duration-500 luxury-shadow-xl">
+                      <Icon className="h-8 w-8 text-white" />
                     </div>
                     
                     <div className="flex-1">
-                      <CardTitle className="text-2xl font-bold text-gray-900 mb-3">
+                      <CardTitle className="text-2xl font-bold text-slate-900 mb-3 tracking-tight">
                         {service.title}
                       </CardTitle>
                       <p className="text-gray-600 leading-relaxed">
@@ -105,7 +110,7 @@ export const Services = () => {
                   <div className="space-y-3 mb-8">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center">
-                        <div className="w-5 h-5 rounded-full bg-gray-900 flex items-center justify-center mr-3">
+                        <div className="w-5 h-5 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center mr-3">
                           <CheckCircle2 className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-gray-700 font-medium">
@@ -116,7 +121,7 @@ export const Services = () => {
                   </div>
                   
                   <Button 
-                    className="w-full bg-gray-900 hover:bg-gray-800 text-white border-0 rounded-lg py-6 text-lg font-semibold shadow-sm hover:shadow-md transition-all duration-300 group"
+                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 rounded-xl py-6 text-lg font-semibold luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group tracking-wide"
                   >
                     Learn More
                     <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -127,16 +132,16 @@ export const Services = () => {
           })}
         </div>
 
-        {/* Clean Stats Section - Now below service cards */}
+        {/* Stats Section - Below service cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => (
             <div key={stat.label} className="group">
-              <div className="bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="glass-effect rounded-2xl p-8 border border-blue-200/30 luxury-shadow hover:luxury-shadow-xl transition-all duration-500 hover:-translate-y-1">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-gray-900 mb-3">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-3">
                     {stat.number}
                   </div>
-                  <div className="text-gray-900 font-semibold text-lg mb-2">
+                  <div className="text-slate-900 font-semibold text-lg mb-2">
                     {stat.label}
                   </div>
                   <div className="text-gray-600 text-sm leading-relaxed">
@@ -149,9 +154,15 @@ export const Services = () => {
         </div>
 
         {/* Professional CTA Section */}
-        <div className="relative bg-gray-900 rounded-lg p-12 lg:p-16 text-center text-white">
+        <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-12 lg:p-16 text-center text-white luxury-shadow-2xl overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 left-10 w-48 h-48 bg-gradient-to-br from-blue-600/10 to-blue-400/10 rounded-full blur-2xl"></div>
+          </div>
+          
           <div className="relative z-10">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white tracking-tight">
               Ready to Optimize Your Logistics?
             </h3>
             <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -162,17 +173,17 @@ export const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 text-lg font-semibold rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border-0"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 text-lg font-semibold rounded-xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group border-0"
               >
                 Get Quote
-                <ArrowRight className="ml-3 h-5 w-5" />
+                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
               
               <Button 
                 size="lg" 
-                className="bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white/50 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
+                className="bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white/50 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-500 group backdrop-blur-sm"
               >
-                <Phone className="mr-3 h-5 w-5" />
+                <Phone className="mr-3 h-5 w-5 group-hover:rotate-12 transition-transform duration-500" />
                 (832) 282-3128
               </Button>
             </div>
