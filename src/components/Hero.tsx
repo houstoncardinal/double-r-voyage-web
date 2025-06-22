@@ -1,14 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Truck, Shield, Clock, Star, CheckCircle, Sparkles } from "lucide-react";
-import { CarTransportAnimation } from "./CarTransportAnimation";
 
 export const Hero = () => {
   return (
     <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 pt-32 sm:pt-40 lg:pt-48 pb-0 overflow-hidden min-h-screen flex flex-col">
-      {/* Full Banner Car Transport Animation */}
-      <CarTransportAnimation />
-      
       {/* Premium background decoration with enhanced effects */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-10 sm:right-20 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-br from-blue-200/40 to-cyan-200/30 rounded-full opacity-50 animate-float blur-3xl"></div>
