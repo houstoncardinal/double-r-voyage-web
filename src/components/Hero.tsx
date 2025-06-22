@@ -1,6 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Truck, Shield, Clock, Star, CheckCircle, Sparkles } from "lucide-react";
+import { CarTransportAnimation } from "./CarTransportAnimation";
 
 export const Hero = () => {
   return (
@@ -87,8 +87,21 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Smaller cards with better spacing */}
+          {/* Right Content - Enhanced with truck animation */}
           <div className="space-y-4 sm:space-y-6 animate-slide-in-right mt-8 lg:mt-0">
+            {/* Animated Car Transport Truck */}
+            <div className="glass-effect rounded-xl sm:rounded-2xl p-4 sm:p-6 luxury-shadow-2xl border border-white/30 luxury-card-hover">
+              <div className="mb-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 tracking-tight mb-2 text-center">Premium Auto Transport</h3>
+                <p className="text-blue-600 font-semibold text-sm sm:text-base tracking-wide text-center mb-4">Nationwide Coverage • Real-Time Tracking</p>
+              </div>
+              <CarTransportAnimation />
+              <div className="flex items-center justify-center text-emerald-600 mt-4">
+                <CheckCircle className="h-4 w-4 mr-2" />
+                <span className="font-medium text-sm tracking-wide">Licensed & Insured Fleet</span>
+              </div>
+            </div>
+
             <div className="glass-effect rounded-xl sm:rounded-2xl p-4 sm:p-6 luxury-shadow-2xl border border-white/30 luxury-card-hover">
               <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4">
                 <div className="bg-gradient-to-br from-blue-100 via-blue-50 to-blue-100 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center luxury-shadow">
