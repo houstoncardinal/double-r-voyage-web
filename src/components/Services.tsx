@@ -1,109 +1,151 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Truck, Zap, Package, Shield, ArrowRight, Star } from "lucide-react";
+import { Truck, Shield, Package, Zap, ArrowRight, Star, MapPin } from "lucide-react";
 
 const services = [
   {
-    title: "Auto Transport from Ports",
-    description: "Fortune 500 trusted port-to-dealer service with white-glove enclosed or open carrier options. Nationwide coverage with real-time GPS tracking and dedicated account management.",
+    title: "Auto Transport",
+    description: "Port-to-dealer service with enclosed or open carrier options. Nationwide coverage with real-time GPS tracking.",
     icon: Truck,
-    features: ["Premium port pickup", "Enclosed/Open carriers", "Real-time GPS tracking", "Fortune 500 dealer networks"],
-    badge: "Most Popular"
+    features: ["Port pickup", "GPS tracking", "Dealer networks", "Full insurance"],
+    color: "blue"
   },
   {
     title: "Hazmat Transportation",
-    description: "Elite certified Hazmat handling with full DOT and EPA compliance. Specialized drivers with advanced certifications and state-of-the-art vehicles for maximum safety.",
+    description: "DOT and EPA compliant hazmat handling with specialized drivers and advanced certifications.",
     icon: Shield,
-    features: ["DOT certified elite", "EPA compliant", "Specialized fleet", "Master-certified drivers"],
-    badge: "Premium"
+    features: ["DOT certified", "EPA compliant", "Specialized fleet", "Expert drivers"],
+    color: "red"
   },
   {
     title: "Flatbed Hauling",
-    description: "Heavy-duty oversized loads including construction equipment, steel, and industrial machinery with military-grade load securement and precision route planning.",
+    description: "Heavy-duty oversized loads including construction equipment and industrial machinery.",
     icon: Package,
-    features: ["Heavy equipment specialist", "Industrial steel transport", "Military-grade securement", "Precision route planning"],
-    badge: "Specialty"
+    features: ["Heavy equipment", "Steel transport", "Load securement", "Route planning"],
+    color: "green"
   },
   {
     title: "Dry Van Logistics",
-    description: "Executive-level general freight transportation with pharmaceutical-grade and climate-controlled options for cross-country hauls and last-mile precision delivery.",
+    description: "General freight transportation with climate-controlled options for cross-country hauls.",
     icon: Zap,
-    features: ["Climate controlled", "Pharmaceutical-grade", "Cross-country express", "Last-mile precision"],
-    badge: "Executive"
+    features: ["Climate controlled", "Cross-country", "Last-mile delivery", "Secure transport"],
+    color: "purple"
   }
 ];
 
+const stats = [
+  { number: "500+", label: "Successful Deliveries", icon: Truck },
+  { number: "24/7", label: "Customer Support", icon: Star },
+  { number: "100%", label: "Fully Insured", icon: Shield },
+  { number: "50+", label: "States Covered", icon: MapPin }
+];
+
 export const Services = () => {
+  const getColorClasses = (color: string) => {
+    const colors = {
+      blue: "bg-blue-100 text-blue-600 border-blue-200",
+      red: "bg-red-100 text-red-600 border-red-200",
+      green: "bg-green-100 text-green-600 border-green-200",
+      purple: "bg-purple-100 text-purple-600 border-purple-200"
+    };
+    return colors[color as keyof typeof colors] || colors.blue;
+  };
+
   return (
-    <section className="py-32 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-700 font-semibold mb-8 shadow-lg">
-            <Star className="h-5 w-5 mr-2" />
-            Fortune 500 Trusted Services
+        {/* Header */}
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium mb-4">
+            <Star className="h-4 w-4 mr-2" />
+            Our Services
           </div>
-          <h2 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tight">
-            Premium <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Services</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Complete Freight Solutions
           </h2>
-          <p className="text-2xl text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">
-            Comprehensive transportation solutions tailored to your specific logistics needs with Fortune 500 reliability
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive transportation services tailored to your specific logistics needs with Fortune 500 reliability
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <div key={stat.label} className="text-center animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
+                <div className="bg-white rounded-2xl p-6 shadow-sm card-hover">
+                  <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <Icon className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900 mb-1">{stat.number}</div>
+                  <div className="text-sm text-gray-600">{stat.label}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <Card 
                 key={service.title}
-                className="group hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-700 transform hover:-translate-y-4 border-0 bg-gradient-to-br from-white to-slate-50/50 backdrop-blur-sm relative overflow-hidden"
+                className="card-hover border-0 shadow-lg bg-white animate-slide-up"
+                style={{animationDelay: `${index * 0.2}s`}}
               >
-                {/* Premium badge */}
-                <div className="absolute top-6 right-6 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                  {service.badge}
-                </div>
-                
-                <CardHeader className="pb-6 relative">
-                  <div className="flex items-center space-x-6 mb-6">
-                    <div className="relative p-4 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl group-hover:from-blue-600 group-hover:to-blue-700 transition-all duration-700 shadow-xl">
-                      <Icon className="h-10 w-10 text-blue-600 group-hover:text-white transition-colors duration-700" />
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-700"></div>
+                <CardHeader className="pb-4">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${getColorClasses(service.color)}`}>
+                      <Icon className="h-6 w-6" />
                     </div>
-                    <div>
-                      <CardTitle className="text-2xl font-black text-slate-900 group-hover:text-blue-700 transition-colors duration-500 tracking-tight">
-                        {service.title}
-                      </CardTitle>
-                    </div>
+                    <CardTitle className="text-xl font-semibold text-gray-900">
+                      {service.title}
+                    </CardTitle>
                   </div>
-                  <CardDescription className="text-slate-600 text-lg leading-relaxed font-medium">
+                  <p className="text-gray-600 leading-relaxed">
                     {service.description}
-                  </CardDescription>
+                  </p>
                 </CardHeader>
                 
                 <CardContent>
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-3 mb-6">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-slate-700 group-hover:text-slate-800 transition-colors duration-300">
-                        <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mr-4 group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-all duration-300"></div>
-                        <span className="font-semibold tracking-wide">{feature}</span>
+                      <div key={idx} className="flex items-center text-gray-700">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                        <span className="text-sm font-medium">{feature}</span>
                       </div>
                     ))}
                   </div>
-                  <Button 
-                    variant="outline" 
-                    className="w-full group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-blue-700 group-hover:text-white group-hover:border-blue-600 transition-all duration-500 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl"
-                  >
+                  <Button variant="outline" className="w-full group">
                     Learn More
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
-                
-                {/* Hover effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl"></div>
               </Card>
             );
           })}
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-8 md:p-12 text-center text-white animate-fade-in">
+          <h3 className="text-3xl font-bold mb-4">Ready to Ship Your Freight?</h3>
+          <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+            Get a quote today and experience the Double R Transportation difference
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+              Get Free Quote
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+              <Phone className="mr-2 h-5 w-5" />
+              (832) 282-3128
+            </Button>
+          </div>
         </div>
       </div>
     </section>
