@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Truck, Shield, Package, Zap, ArrowRight, CheckCircle2, MapPin, Phone, Clock, Award } from "lucide-react";
+import { Truck, Shield, Package, Zap, ArrowRight, CheckCircle2, Phone, Award } from "lucide-react";
 
 const services = [
   {
@@ -34,25 +34,21 @@ const stats = [
   { 
     number: "500+", 
     label: "Successful Deliveries", 
-    icon: Truck,
     description: "Premium shipments completed"
   },
   { 
     number: "24/7", 
     label: "Customer Support", 
-    icon: Clock,
     description: "Always available assistance"
   },
   { 
     number: "100%", 
     label: "Fully Insured", 
-    icon: Shield,
     description: "Complete protection coverage"
   },
   { 
     number: "50+", 
     label: "States Covered", 
-    icon: MapPin,
     description: "Nationwide reach & reliability"
   }
 ];
@@ -61,7 +57,7 @@ export const Services = () => {
   return (
     <section className="relative py-24 bg-white overflow-hidden">
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 to-white"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Professional Header */}
@@ -81,46 +77,38 @@ export const Services = () => {
           </p>
         </div>
 
-        {/* Corporate Stats Section */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <div key={stat.label} className="group">
-                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  {/* Professional icon container */}
-                  <div className="w-16 h-16 rounded-xl bg-gray-900 flex items-center justify-center mx-auto mb-6 group-hover:bg-gray-800 transition-colors duration-300">
-                    <Icon className="h-8 w-8 text-white" />
+        {/* Clean Stats Section without icons */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {stats.map((stat, index) => (
+            <div key={stat.label} className="group">
+              <div className="bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-gray-900 mb-3">
+                    {stat.number}
                   </div>
-                  
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-gray-900 mb-2">
-                      {stat.number}
-                    </div>
-                    <div className="text-gray-900 font-semibold text-lg mb-2">
-                      {stat.label}
-                    </div>
-                    <div className="text-gray-600 text-sm leading-relaxed">
-                      {stat.description}
-                    </div>
+                  <div className="text-gray-900 font-semibold text-lg mb-2">
+                    {stat.label}
+                  </div>
+                  <div className="text-gray-600 text-sm leading-relaxed">
+                    {stat.description}
                   </div>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
-        {/* Corporate Services Grid */}
+        {/* Professional Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Card key={service.title} className="group border border-gray-200 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden">
+              <Card key={service.title} className="group border border-gray-200 bg-white shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-lg overflow-hidden">
                 <CardHeader className="pb-6 pt-8 px-8">
                   <div className="flex items-start space-x-6 mb-6">
-                    {/* Corporate icon design */}
-                    <div className="w-16 h-16 rounded-xl bg-gray-900 flex items-center justify-center group-hover:bg-gray-800 transition-colors duration-300">
-                      <Icon className="h-8 w-8 text-white" />
+                    {/* Minimalist icon design */}
+                    <div className="w-14 h-14 rounded-lg bg-gray-900 flex items-center justify-center group-hover:bg-gray-800 transition-colors duration-300">
+                      <Icon className="h-7 w-7 text-white" />
                     </div>
                     
                     <div className="flex-1">
@@ -149,7 +137,7 @@ export const Services = () => {
                   </div>
                   
                   <Button 
-                    className="w-full bg-gray-900 hover:bg-gray-800 text-white border-0 rounded-xl py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+                    className="w-full bg-gray-900 hover:bg-gray-800 text-white border-0 rounded-lg py-6 text-lg font-semibold shadow-sm hover:shadow-md transition-all duration-300 group"
                   >
                     Learn More
                     <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -160,8 +148,8 @@ export const Services = () => {
           })}
         </div>
 
-        {/* Corporate CTA Section */}
-        <div className="relative bg-gray-900 rounded-2xl p-12 lg:p-16 text-center text-white">
+        {/* Professional CTA Section */}
+        <div className="relative bg-gray-900 rounded-lg p-12 lg:p-16 text-center text-white">
           <div className="relative z-10">
             <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Ready to Optimize Your Logistics?
@@ -174,7 +162,7 @@ export const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-0"
+                className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 text-lg font-semibold rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border-0"
               >
                 Get Quote
                 <ArrowRight className="ml-3 h-5 w-5" />
@@ -182,7 +170,7 @@ export const Services = () => {
               
               <Button 
                 size="lg" 
-                className="bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white/50 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                className="bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white/50 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
               >
                 <Phone className="mr-3 h-5 w-5" />
                 (832) 282-3128
