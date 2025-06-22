@@ -154,13 +154,13 @@ export const Services = () => {
           ))}
         </div>
 
-        {/* Professional Company Showcase - Clean and Professional Design */}
+        {/* Professional Company Showcase with Top Z-Index Animation */}
         <div className="relative group overflow-hidden rounded-3xl bg-white border border-blue-200/20 luxury-shadow-2xl">
           {/* Clean background with subtle gradients */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-slate-50/30"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-transparent to-blue-600/5"></div>
           
-          <div className="relative z-10 p-12">
+          <div className="relative z-20 p-12">
             {/* Professional Header */}
             <div className="text-center mb-10">
               <div className="inline-flex items-center px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-700 mb-6 luxury-shadow-xl">
@@ -178,10 +178,12 @@ export const Services = () => {
               </p>
             </div>
             
-            {/* Professional Truck Animation Container */}
-            <div className="relative bg-gradient-to-br from-slate-100/50 to-blue-50/30 rounded-2xl border border-blue-200/30 p-8 mb-10 luxury-shadow">
-              <div className="relative h-64 overflow-hidden rounded-xl">
-                <CarTransportAnimation />
+            {/* Professional Truck Animation Container with Maximum Z-Index */}
+            <div className="relative z-50 bg-gradient-to-br from-slate-100/50 to-blue-50/30 rounded-2xl border border-blue-200/30 p-8 mb-10 luxury-shadow">
+              <div className="relative z-50 h-80 overflow-hidden rounded-xl">
+                <div className="absolute inset-0 z-50">
+                  <CarTransportAnimation />
+                </div>
               </div>
             </div>
             
