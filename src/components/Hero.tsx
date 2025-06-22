@@ -140,34 +140,60 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Scrolling Text Banner at bottom */}
-      <div className="relative z-10 w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 py-4 overflow-hidden">
-        <div className="animate-marquee whitespace-nowrap">
-          <span className="text-white font-semibold text-lg tracking-wide mx-8">
-            🚛 Premium Auto Transport Services
-          </span>
-          <span className="text-white font-semibold text-lg tracking-wide mx-8">
-            🛡️ Fully Licensed & Insured
-          </span>
-          <span className="text-white font-semibold text-lg tracking-wide mx-8">
-            📍 Nationwide Coverage
-          </span>
-          <span className="text-white font-semibold text-lg tracking-wide mx-8">
-            ⭐ 24/7 Customer Support
-          </span>
-          <span className="text-white font-semibold text-lg tracking-wide mx-8">
-            🚛 Premium Auto Transport Services
-          </span>
-          <span className="text-white font-semibold text-lg tracking-wide mx-8">
-            🛡️ Fully Licensed & Insured
-          </span>
-          <span className="text-white font-semibold text-lg tracking-wide mx-8">
-            📍 Nationwide Coverage
-          </span>
-          <span className="text-white font-semibold text-lg tracking-wide mx-8">
-            ⭐ 24/7 Customer Support
-          </span>
+      {/* Luxury Scrolling Banner - Enhanced with more spacing and premium styling */}
+      <div className="relative z-10 w-full mt-16 sm:mt-20 lg:mt-24">
+        {/* Elegant top border with gradient */}
+        <div className="h-px bg-gradient-to-r from-transparent via-blue-300/50 to-transparent"></div>
+        
+        {/* Main banner with luxury styling */}
+        <div className="bg-gradient-to-r from-blue-800 via-blue-700 to-blue-800 relative overflow-hidden">
+          {/* Subtle animated background pattern */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-cyan-500/10 to-blue-600/20 animate-shimmer"></div>
+          <div className="absolute inset-0">
+            <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-blue-900/30 via-transparent to-blue-900/30"></div>
+          </div>
+          
+          {/* Content */}
+          <div className="relative z-10 py-5 sm:py-6">
+            <div className="animate-marquee whitespace-nowrap">
+              <span className="text-white font-bold text-lg sm:text-xl tracking-wide mx-12 inline-flex items-center">
+                <span className="text-2xl mr-3">🏙️</span>
+                HOUSTON ↔ NATIONWIDE TRANSPORT
+              </span>
+              <span className="text-blue-100 font-semibold text-lg sm:text-xl tracking-wide mx-12 inline-flex items-center">
+                <span className="text-2xl mr-3">🚛</span>
+                Premium Auto Transport Services
+              </span>
+              <span className="text-white font-bold text-lg sm:text-xl tracking-wide mx-12 inline-flex items-center">
+                <span className="text-2xl mr-3">🇺🇸</span>
+                FROM ANY CITY TO HOUSTON
+              </span>
+              <span className="text-blue-100 font-semibold text-lg sm:text-xl tracking-wide mx-12 inline-flex items-center">
+                <span className="text-2xl mr-3">🛡️</span>
+                Fully Licensed & Insured
+              </span>
+              <span className="text-white font-bold text-lg sm:text-xl tracking-wide mx-12 inline-flex items-center">
+                <span className="text-2xl mr-3">🌟</span>
+                HOUSTON TO ANY CITY IN AMERICA
+              </span>
+              <span className="text-blue-100 font-semibold text-lg sm:text-xl tracking-wide mx-12 inline-flex items-center">
+                <span className="text-2xl mr-3">📞</span>
+                24/7 Concierge Support
+              </span>
+              <span className="text-white font-bold text-lg sm:text-xl tracking-wide mx-12 inline-flex items-center">
+                <span className="text-2xl mr-3">🏙️</span>
+                HOUSTON ↔ NATIONWIDE TRANSPORT
+              </span>
+              <span className="text-blue-100 font-semibold text-lg sm:text-xl tracking-wide mx-12 inline-flex items-center">
+                <span className="text-2xl mr-3">🚛</span>
+                Premium Auto Transport Services
+              </span>
+            </div>
+          </div>
         </div>
+        
+        {/* Elegant bottom border with gradient */}
+        <div className="h-px bg-gradient-to-r from-transparent via-blue-300/50 to-transparent"></div>
       </div>
     </section>
   );
