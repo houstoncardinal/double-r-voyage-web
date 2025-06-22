@@ -93,111 +93,139 @@ export const CarTransportAnimation = () => {
             <rect x="340" y="98" width="6" height="52" fill="#94a3b8" rx="3" />
             <rect x="420" y="98" width="6" height="52" fill="#94a3b8" rx="3" />
             
-            {/* Bold visible vehicles - Bottom level */}
-            
-            {/* Car 1 - Strong Blue */}
+            {/* Loading area - left side */}
             <rect
-              x="130"
-              y="115"
-              width="75"
-              height="35"
-              fill="url(#boldCar1Gradient)"
-              rx="15"
-              className="animate-pulse opacity-100"
-              style={{animationDelay: '0.5s', animationDuration: '6s'}}
+              x="20"
+              y="160"
+              width="80"
+              height="40"
+              fill="url(#loadingAreaGradient)"
+              rx="8"
+              className="drop-shadow-md opacity-80"
             />
-            <rect x="138" y="125" width="59" height="12" fill="url(#clearGlassGradient)" rx="5" />
-            <circle cx="155" cy="155" r="8" fill="#64748b" />
-            <circle cx="155" cy="155" r="5" fill="url(#boldRimGradient)" />
-            <circle cx="180" cy="155" r="8" fill="#64748b" />
-            <circle cx="180" cy="155" r="5" fill="url(#boldRimGradient)" />
             
-            {/* Car 2 - Strong Silver */}
+            {/* Unloading area - right side */}
             <rect
-              x="220"
-              y="115"
-              width="75"
-              height="35"
-              fill="url(#boldCar2Gradient)"
-              rx="15"
-              className="animate-pulse opacity-100"
-              style={{animationDelay: '1.5s', animationDuration: '6s'}}
+              x="700"
+              y="160"
+              width="80"
+              height="40"
+              fill="url(#unloadingAreaGradient)"
+              rx="8"
+              className="drop-shadow-md opacity-80"
             />
-            <rect x="228" y="125" width="59" height="12" fill="url(#clearGlassGradient)" rx="5" />
-            <circle cx="245" cy="155" r="8" fill="#64748b" />
-            <circle cx="245" cy="155" r="5" fill="url(#boldRimGradient)" />
-            <circle cx="270" cy="155" r="8" fill="#64748b" />
-            <circle cx="270" cy="155" r="5" fill="url(#boldRimGradient)" />
+
+            {/* Dynamic loading cars - moving from left to positions */}
             
-            {/* Car 3 - Strong Gold */}
-            <rect
-              x="310"
-              y="115"
-              width="75"
-              height="35"
-              fill="url(#boldCar3Gradient)"
-              rx="15"
-              className="animate-pulse opacity-100"
-              style={{animationDelay: '2.5s', animationDuration: '6s'}}
-            />
-            <rect x="318" y="125" width="59" height="12" fill="url(#clearGlassGradient)" rx="5" />
-            <circle cx="335" cy="155" r="8" fill="#64748b" />
-            <circle cx="335" cy="155" r="5" fill="url(#boldRimGradient)" />
-            <circle cx="360" cy="155" r="8" fill="#64748b" />
-            <circle cx="360" cy="155" r="5" fill="url(#boldRimGradient)" />
+            {/* Car Loading 1 - Blue car moving to bottom level position 1 */}
+            <g className="animate-[loadCar1_8s_ease-in-out_infinite]">
+              <rect
+                x="30"
+                y="170"
+                width="60"
+                height="28"
+                fill="url(#boldCar1Gradient)"
+                rx="12"
+                className="opacity-100"
+              />
+              <rect x="36" y="178" width="48" height="8" fill="url(#clearGlassGradient)" rx="4" />
+              <circle cx="48" cy="205" r="6" fill="#64748b" />
+              <circle cx="48" cy="205" r="4" fill="url(#boldRimGradient)" />
+              <circle cx="72" cy="205" r="6" fill="#64748b" />
+              <circle cx="72" cy="205" r="4" fill="url(#boldRimGradient)" />
+            </g>
             
-            {/* Top level vehicles */}
+            {/* Car Loading 2 - Silver car moving to bottom level position 2 */}
+            <g className="animate-[loadCar2_8s_ease-in-out_infinite]" style={{animationDelay: '1s'}}>
+              <rect
+                x="30"
+                y="170"
+                width="60"
+                height="28"
+                fill="url(#boldCar2Gradient)"
+                rx="12"
+                className="opacity-100"
+              />
+              <rect x="36" y="178" width="48" height="8" fill="url(#clearGlassGradient)" rx="4" />
+              <circle cx="48" cy="205" r="6" fill="#64748b" />
+              <circle cx="48" cy="205" r="4" fill="url(#boldRimGradient)" />
+              <circle cx="72" cy="205" r="6" fill="#64748b" />
+              <circle cx="72" cy="205" r="4" fill="url(#boldRimGradient)" />
+            </g>
             
-            {/* Car 4 - Strong Pearl */}
-            <rect
-              x="140"
-              y="45"
-              width="75"
-              height="35"
-              fill="url(#boldCar4Gradient)"
-              rx="15"
-              className="animate-pulse opacity-100"
-              style={{animationDelay: '3s', animationDuration: '6s'}}
-            />
-            <rect x="148" y="55" width="59" height="12" fill="url(#clearGlassGradient)" rx="5" />
-            <circle cx="165" cy="85" r="8" fill="#64748b" />
-            <circle cx="165" cy="85" r="5" fill="url(#boldRimGradient)" />
-            <circle cx="190" cy="85" r="8" fill="#64748b" />
-            <circle cx="190" cy="85" r="5" fill="url(#boldRimGradient)" />
+            {/* Car Loading 3 - Gold car moving to top level position 1 */}
+            <g className="animate-[loadCar3_8s_ease-in-out_infinite]" style={{animationDelay: '2s'}}>
+              <rect
+                x="30"
+                y="170"
+                width="60"
+                height="28"
+                fill="url(#boldCar3Gradient)"
+                rx="12"
+                className="opacity-100"
+              />
+              <rect x="36" y="178" width="48" height="8" fill="url(#clearGlassGradient)" rx="4" />
+              <circle cx="48" cy="205" r="6" fill="#64748b" />
+              <circle cx="48" cy="205" r="4" fill="url(#boldRimGradient)" />
+              <circle cx="72" cy="205" r="6" fill="#64748b" />
+              <circle cx="72" cy="205" r="4" fill="url(#boldRimGradient)" />
+            </g>
+
+            {/* Dynamic unloading cars - moving from positions to right */}
             
-            {/* Car 5 - Strong Red */}
-            <rect
-              x="230"
-              y="45"
-              width="75"
-              height="35"
-              fill="url(#boldCar5Gradient)"
-              rx="15"
-              className="animate-pulse opacity-100"
-              style={{animationDelay: '3.5s', animationDuration: '6s'}}
-            />
-            <rect x="238" y="55" width="59" height="12" fill="url(#clearGlassGradient)" rx="5" />
-            <circle cx="255" cy="85" r="8" fill="#64748b" />
-            <circle cx="255" cy="85" r="5" fill="url(#boldRimGradient)" />
-            <circle cx="280" cy="85" r="8" fill="#64748b" />
-            <circle cx="280" cy="85" r="5" fill="url(#boldRimGradient)" />
+            {/* Car Unloading 1 - Pearl car moving from top level position 2 to unloading area */}
+            <g className="animate-[unloadCar1_8s_ease-in-out_infinite]" style={{animationDelay: '4s'}}>
+              <rect
+                x="230"
+                y="45"
+                width="60"
+                height="28"
+                fill="url(#boldCar4Gradient)"
+                rx="12"
+                className="opacity-100"
+              />
+              <rect x="236" y="53" width="48" height="8" fill="url(#clearGlassGradient)" rx="4" />
+              <circle cx="248" cy="80" r="6" fill="#64748b" />
+              <circle cx="248" cy="80" r="4" fill="url(#boldRimGradient)" />
+              <circle cx="272" cy="80" r="6" fill="#64748b" />
+              <circle cx="272" cy="80" r="4" fill="url(#boldRimGradient)" />
+            </g>
             
-            {/* Car 6 - Strong Green */}
-            <rect
-              x="320"
-              y="45"
-              width="75"
-              height="35"
-              fill="url(#boldCar6Gradient)"
-              rx="15"
-              className="animate-pulse opacity-100"
-              style={{animationDelay: '4s', animationDuration: '6s'}}
-            />
-            <rect x="328" y="55" width="59" height="12" fill="url(#clearGlassGradient)" rx="5" />
-            <circle cx="345" cy="85" r="8" fill="#64748b" />
-            <circle cx="345" cy="85" r="5" fill="url(#boldRimGradient)" />
-            <circle cx="370" cy="85" r="8" fill="#64748b" />
-            <circle cx="370" cy="85" r="5" fill="url(#boldRimGradient)" />
+            {/* Car Unloading 2 - Red car moving from bottom level position 3 to unloading area */}
+            <g className="animate-[unloadCar2_8s_ease-in-out_infinite]" style={{animationDelay: '5s'}}>
+              <rect
+                x="310"
+                y="115"
+                width="60"
+                height="28"
+                fill="url(#boldCar5Gradient)"
+                rx="12"
+                className="opacity-100"
+              />
+              <rect x="316" y="123" width="48" height="8" fill="url(#clearGlassGradient)" rx="4" />
+              <circle cx="328" cy="150" r="6" fill="#64748b" />
+              <circle cx="328" cy="150" r="4" fill="url(#boldRimGradient)" />
+              <circle cx="352" cy="150" r="6" fill="#64748b" />
+              <circle cx="352" cy="150" r="4" fill="url(#boldRimGradient)" />
+            </g>
+            
+            {/* Car Unloading 3 - Green car moving from top level position 3 to unloading area */}
+            <g className="animate-[unloadCar3_8s_ease-in-out_infinite]" style={{animationDelay: '6s'}}>
+              <rect
+                x="320"
+                y="45"
+                width="60"
+                height="28"
+                fill="url(#boldCar6Gradient)"
+                rx="12"
+                className="opacity-100"
+              />
+              <rect x="326" y="53" width="48" height="8" fill="url(#clearGlassGradient)" rx="4" />
+              <circle cx="338" cy="80" r="6" fill="#64748b" />
+              <circle cx="338" cy="80" r="4" fill="url(#boldRimGradient)" />
+              <circle cx="362" cy="80" r="6" fill="#64748b" />
+              <circle cx="362" cy="80" r="4" fill="url(#boldRimGradient)" />
+            </g>
             
             {/* Bold truck details */}
             <rect x="540" y="130" width="15" height="10" fill="#3b82f6" rx="3" />
@@ -242,6 +270,18 @@ export const CarTransportAnimation = () => {
                 <stop offset="50%" stopColor="#cbd5e1" />
                 <stop offset="75%" stopColor="#64748b" />
                 <stop offset="100%" stopColor="#94a3b8" />
+              </linearGradient>
+              
+              <linearGradient id="loadingAreaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#22c55e" />
+                <stop offset="50%" stopColor="#16a34a" />
+                <stop offset="100%" stopColor="#15803d" />
+              </linearGradient>
+              
+              <linearGradient id="unloadingAreaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#f59e0b" />
+                <stop offset="50%" stopColor="#d97706" />
+                <stop offset="100%" stopColor="#b45309" />
               </linearGradient>
               
               <radialGradient id="boldWheelGradient">
@@ -309,6 +349,51 @@ export const CarTransportAnimation = () => {
       {/* Visible luxury glow effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer opacity-80"></div>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
+      
+      {/* Dynamic loading/unloading animations */}
+      <style jsx>{`
+        @keyframes loadCar1 {
+          0% { transform: translateX(0) translateY(0); }
+          25% { transform: translateX(100px) translateY(-55px); }
+          50% { transform: translateX(100px) translateY(-55px); }
+          100% { transform: translateX(0) translateY(0); }
+        }
+        
+        @keyframes loadCar2 {
+          0% { transform: translateX(0) translateY(0); }
+          25% { transform: translateX(190px) translateY(-55px); }
+          50% { transform: translateX(190px) translateY(-55px); }
+          100% { transform: translateX(0) translateY(0); }
+        }
+        
+        @keyframes loadCar3 {
+          0% { transform: translateX(0) translateY(0); }
+          25% { transform: translateX(110px) translateY(-125px); }
+          50% { transform: translateX(110px) translateY(-125px); }
+          100% { transform: translateX(0) translateY(0); }
+        }
+        
+        @keyframes unloadCar1 {
+          0% { transform: translateX(0) translateY(0); }
+          25% { transform: translateX(470px) translateY(125px); }
+          50% { transform: translateX(470px) translateY(125px); }
+          100% { transform: translateX(0) translateY(0); }
+        }
+        
+        @keyframes unloadCar2 {
+          0% { transform: translateX(0) translateY(0); }
+          25% { transform: translateX(390px) translateY(55px); }
+          50% { transform: translateX(390px) translateY(55px); }
+          100% { transform: translateX(0) translateY(0); }
+        }
+        
+        @keyframes unloadCar3 {
+          0% { transform: translateX(0) translateY(0); }
+          25% { transform: translateX(380px) translateY(125px); }
+          50% { transform: translateX(380px) translateY(125px); }
+          100% { transform: translateX(0) translateY(0); }
+        }
+      `}</style>
     </div>
   );
 };
