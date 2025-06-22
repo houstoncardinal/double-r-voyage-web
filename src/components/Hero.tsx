@@ -5,22 +5,17 @@ import { CarTransportAnimation } from "./CarTransportAnimation";
 export const Hero = () => {
   return (
     <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 pt-32 sm:pt-40 lg:pt-48 pb-0 overflow-hidden min-h-screen flex flex-col">
+      {/* Full Banner Car Transport Animation */}
+      <CarTransportAnimation />
+      
       {/* Premium background decoration with enhanced effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 sm:right-20 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-br from-blue-200/60 to-cyan-200/60 rounded-full opacity-70 animate-float blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 sm:left-20 w-60 sm:w-80 h-60 sm:h-80 bg-gradient-to-br from-purple-200/50 to-blue-200/50 rounded-full opacity-60 animate-float blur-2xl" style={{animationDelay: '3s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[1000px] h-[600px] sm:h-[1000px] bg-gradient-to-br from-blue-100/30 to-cyan-100/30 rounded-full opacity-40 animate-float blur-3xl" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute top-20 right-10 sm:right-20 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-br from-blue-200/40 to-cyan-200/30 rounded-full opacity-50 animate-float blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 sm:left-20 w-60 sm:w-80 h-60 sm:h-80 bg-gradient-to-br from-purple-200/30 to-blue-200/25 rounded-full opacity-40 animate-float blur-2xl" style={{animationDelay: '3s'}}></div>
         
         {/* Animated gradient orbs */}
-        <div className="absolute top-32 left-1/4 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-br from-gold-300/20 to-yellow-300/20 rounded-full animate-glow blur-xl"></div>
-        <div className="absolute bottom-32 right-1/4 w-24 sm:w-40 h-24 sm:h-40 bg-gradient-to-br from-emerald-300/20 to-teal-300/20 rounded-full animate-glow blur-xl" style={{animationDelay: '2s'}}></div>
-      </div>
-
-      {/* Background Car Transport Animation */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-        <div className="w-full max-w-4xl">
-          <CarTransportAnimation />
-        </div>
+        <div className="absolute top-32 left-1/4 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-br from-gold-300/15 to-yellow-300/10 rounded-full animate-glow blur-xl"></div>
+        <div className="absolute bottom-32 right-1/4 w-24 sm:w-40 h-24 sm:h-40 bg-gradient-to-br from-emerald-300/15 to-teal-300/10 rounded-full animate-glow blur-xl" style={{animationDelay: '2s'}}></div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex items-center">
