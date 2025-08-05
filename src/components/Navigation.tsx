@@ -46,13 +46,15 @@ export const Navigation = () => {
 
           {/* Call Button - Enhanced for mobile */}
           <div className="hidden md:block">
-            <Button className="bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 hover:from-blue-700 hover:via-blue-800 hover:to-cyan-700 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-2xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group font-semibold text-base lg:text-lg tracking-wide">
-              <Sparkles className="h-4 w-4 lg:h-5 lg:w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
-              <Phone className="h-4 w-4 lg:h-5 lg:w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
-              <span className="hidden lg:inline">(832) 282-3128</span>
-              <span className="lg:hidden">Call</span>
-              <ArrowRight className="h-4 w-4 lg:h-5 lg:w-5 ml-2 group-hover:translate-x-1 transition-transform duration-500" />
-            </Button>
+            <a href="tel:8322823128">
+              <Button className="bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 hover:from-blue-700 hover:via-blue-800 hover:to-cyan-700 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-2xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group font-semibold text-base lg:text-lg tracking-wide">
+                <Sparkles className="h-4 w-4 lg:h-5 lg:w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
+                <Phone className="h-4 w-4 lg:h-5 lg:w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
+                <span className="hidden lg:inline">(832) 282-3128</span>
+                <span className="lg:hidden">Call</span>
+                <ArrowRight className="h-4 w-4 lg:h-5 lg:w-5 ml-2 group-hover:translate-x-1 transition-transform duration-500" />
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button - Enhanced */}
@@ -86,11 +88,13 @@ export const Navigation = () => {
                 </a>
               ))}
               <div className="pt-4 animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
-                <Button className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 hover:from-blue-700 hover:via-blue-800 hover:to-cyan-700 text-white py-4 rounded-2xl luxury-shadow-xl font-semibold text-lg tracking-wide group">
-                  <Sparkles className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
-                  <Phone className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
-                  (832) 282-3128
-                </Button>
+                <a href="tel:8322823128" className="block">
+                  <Button className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 hover:from-blue-700 hover:via-blue-800 hover:to-cyan-700 text-white py-4 rounded-2xl luxury-shadow-xl font-semibold text-lg tracking-wide group">
+                    <Sparkles className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
+                    <Phone className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
+                    (832) 282-3128
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

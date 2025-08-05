@@ -47,17 +47,21 @@ export const Hero = () => {
 
             {/* Enhanced CTA Buttons - Mobile optimized */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 hover:from-blue-700 hover:via-blue-800 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group luxury-card-hover font-semibold tracking-wide">
-                <Sparkles className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-500" />
-                <span className="hidden sm:inline">Get Premium Quote</span>
-                <span className="sm:hidden">Get Quote</span>
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-500" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-2 border-gray-300 hover:border-gray-400 text-gray-800 hover:bg-gray-50 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl luxury-shadow hover:luxury-shadow-xl transition-all duration-500 group backdrop-blur-sm font-semibold tracking-wide">
-                <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-500" />
-                <span className="hidden sm:inline">(832) 282-3128</span>
-                <span className="sm:hidden">Call Us</span>
-              </Button>
+              <a href="#contact">
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 hover:from-blue-700 hover:via-blue-800 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group luxury-card-hover font-semibold tracking-wide">
+                  <Sparkles className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-500" />
+                  <span className="hidden sm:inline">Get Premium Quote</span>
+                  <span className="sm:hidden">Get Quote</span>
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-500" />
+                </Button>
+              </a>
+              <a href="tel:8322823128">
+                <Button size="lg" variant="outline" className="border-2 border-gray-300 hover:border-gray-400 text-gray-800 hover:bg-gray-50 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl luxury-shadow hover:luxury-shadow-xl transition-all duration-500 group backdrop-blur-sm font-semibold tracking-wide">
+                  <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-500" />
+                  <span className="hidden sm:inline">(832) 282-3128</span>
+                  <span className="sm:hidden">Call Us</span>
+                </Button>
+              </a>
             </div>
 
             {/* Enhanced trust indicators - Mobile optimized */}

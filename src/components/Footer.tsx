@@ -73,7 +73,7 @@ export const Footer = () => {
         <div className="border-t border-slate-700/30 py-6">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-3 lg:space-y-0">
             <p className="text-gray-400">
-              © 2024 Double R Transportation LLC. All rights reserved.
+              © 2025 Double R Transportation LLC. All rights reserved.
             </p>
             <div className="flex space-x-6 text-gray-400 text-sm">
               <a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a>

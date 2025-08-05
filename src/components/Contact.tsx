@@ -169,7 +169,12 @@ export const Contact = () => {
               </div>
 
               <Button 
+                type="submit"
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = 'tel:8322823128';
+                }}
               >
                 Get My Quote
               </Button>
