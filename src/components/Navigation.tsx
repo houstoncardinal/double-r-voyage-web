@@ -25,7 +25,7 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-20 lg:h-24">
           {/* Logo - Enhanced for mobile */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent tracking-tight">
+            <h1 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent tracking-tight">
               Double R{" "}
               <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                 Transportation
@@ -85,7 +85,7 @@ export const Navigation = () => {
           {/* Action Buttons - Enhanced for mobile */}
           <div className="hidden md:flex space-x-3">
             <a href="/get-a-quote">
-              <Button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group font-semibold text-sm lg:text-base tracking-wide">
+              <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group font-semibold text-sm lg:text-base tracking-wide">
                 <Sparkles className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-500" />
                 Get A Quote
                 <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-500" />
@@ -156,7 +156,7 @@ export const Navigation = () => {
               {/* Mobile Action Buttons */}
               <div className="pt-4 animate-slide-in-left border-t border-gray-200 space-y-3" style={{ animationDelay: '0.6s' }}>
                 <a href="/get-a-quote" className="block">
-                  <Button className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white py-4 rounded-2xl luxury-shadow-xl font-semibold text-lg tracking-wide group">
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white py-4 rounded-2xl luxury-shadow-xl font-semibold text-lg tracking-wide group">
                     <Sparkles className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
                     Get A Quote
                     <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-500" />
