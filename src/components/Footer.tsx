@@ -42,10 +42,10 @@ export const Footer = () => {
 
               {/* Get Quote Button for Mobile */}
               <div className="block lg:hidden pt-4">
-                <a href="#contact">
+                <a href="/get-a-quote">
                   <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group">
                     <Sparkles className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
-                    Get Quote
+                    Get A Quote
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
                 </a>
@@ -79,10 +79,10 @@ export const Footer = () => {
 
               {/* Get Quote Button for Desktop */}
               <div className="hidden lg:block pt-4">
-                <a href="#contact">
+                <a href="/get-a-quote">
                   <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group">
                     <Sparkles className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
-                    Get Quote
+                    Get A Quote
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
                 </a>

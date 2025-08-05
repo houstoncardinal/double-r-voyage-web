@@ -15,6 +15,7 @@ import { DryVanLogistics } from "./pages/services/DryVanLogistics";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import DOTCompliance from "./pages/DOTCompliance";
+import GetAQuote from "./pages/GetAQuote";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
             <Route path="/services/hazmat-transportation" element={<HazmatTransportation />} />
             <Route path="/services/flatbed-hauling" element={<FlatbedHauling />} />
             <Route path="/services/dry-van-logistics" element={<DryVanLogistics />} />
+            <Route path="/get-a-quote" element={<GetAQuote />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/dot-compliance" element={<DOTCompliance />} />

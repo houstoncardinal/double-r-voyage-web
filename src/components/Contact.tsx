@@ -81,7 +81,7 @@ export const Contact = () => {
           {/* Contact Form */}
           <Card className="border-0 shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold text-slate-900">Request a Quote</CardTitle>
+              <CardTitle className="text-2xl font-bold text-slate-900">Contact Us</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -176,7 +176,7 @@ export const Contact = () => {
                   window.location.href = 'tel:8322823128';
                 }}
               >
-                Get My Quote
+                Get In Touch
               </Button>
 
               <p className="text-sm text-slate-500 text-center">

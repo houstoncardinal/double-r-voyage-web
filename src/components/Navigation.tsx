@@ -82,15 +82,20 @@ export const Navigation = () => {
             </div>
           </div>
 
-          {/* Call Button - Enhanced for mobile */}
-          <div className="hidden md:block">
+          {/* Action Buttons - Enhanced for mobile */}
+          <div className="hidden md:flex space-x-3">
+            <a href="/get-a-quote">
+              <Button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group font-semibold text-sm lg:text-base tracking-wide">
+                <Sparkles className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-500" />
+                Get A Quote
+                <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-500" />
+              </Button>
+            </a>
             <a href="tel:8322823128">
-              <Button className="bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 hover:from-blue-700 hover:via-blue-800 hover:to-cyan-700 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-2xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group font-semibold text-base lg:text-lg tracking-wide">
-                <Sparkles className="h-4 w-4 lg:h-5 lg:w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
-                <Phone className="h-4 w-4 lg:h-5 lg:w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
+              <Button variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 lg:px-6 py-2 lg:py-3 rounded-xl luxury-shadow hover:luxury-shadow-xl transition-all duration-500 group font-semibold text-sm lg:text-base tracking-wide">
+                <Phone className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-500" />
                 <span className="hidden lg:inline">(832) 282-3128</span>
                 <span className="lg:hidden">Call</span>
-                <ArrowRight className="h-4 w-4 lg:h-5 lg:w-5 ml-2 group-hover:translate-x-1 transition-transform duration-500" />
               </Button>
             </a>
           </div>
@@ -148,10 +153,17 @@ export const Navigation = () => {
                 })}
               </div>
               
-              <div className="pt-4 animate-slide-in-left border-t border-gray-200" style={{ animationDelay: '0.6s' }}>
-                <a href="tel:8322823128" className="block">
-                  <Button className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 hover:from-blue-700 hover:via-blue-800 hover:to-cyan-700 text-white py-4 rounded-2xl luxury-shadow-xl font-semibold text-lg tracking-wide group">
+              {/* Mobile Action Buttons */}
+              <div className="pt-4 animate-slide-in-left border-t border-gray-200 space-y-3" style={{ animationDelay: '0.6s' }}>
+                <a href="/get-a-quote" className="block">
+                  <Button className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white py-4 rounded-2xl luxury-shadow-xl font-semibold text-lg tracking-wide group">
                     <Sparkles className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
+                    Get A Quote
+                    <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-500" />
+                  </Button>
+                </a>
+                <a href="tel:8322823128" className="block">
+                  <Button variant="outline" className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white py-4 rounded-2xl luxury-shadow-xl font-semibold text-lg tracking-wide group">
                     <Phone className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
                     (832) 282-3128
                   </Button>

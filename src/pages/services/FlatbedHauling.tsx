@@ -44,10 +44,10 @@ export const FlatbedHauling = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact">
+                <a href="/get-a-quote">
                   <Button size="lg" className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-8 py-4 text-lg font-semibold rounded-xl">
                     <Sparkles className="mr-2 h-5 w-5" />
-                    Get Quote
+                    Get A Quote
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </a>
@@ -229,9 +229,9 @@ export const FlatbedHauling = () => {
             <p className="text-xl mb-8 opacity-90">Trust our flatbed experts for safe, professional heavy equipment transport.</p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/#contact">
+              <a href="/get-a-quote">
                 <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-                  Get Quote Now
+                  Get A Quote Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
