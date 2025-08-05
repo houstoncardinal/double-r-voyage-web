@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
-  const rows = new Array(150).fill(1);
-  const cols = new Array(100).fill(1);
+  const rows = new Array(40).fill(1);
+  const cols = new Array(30).fill(1);
   
   // Transportation company themed colors - luxury blues, cyans, and premium tones
   const colors = [
@@ -45,11 +45,11 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
             <motion.div
               whileHover={{
                 backgroundColor: getRandomColor(),
-                transition: { duration: 0.1 },
+                transition: { duration: 0.05 },
               }}
               animate={{
-                backgroundColor: "transparent",
-                transition: { duration: 2 },
+                backgroundColor: "rgba(0, 0, 0, 0)",
+                transition: { duration: 1 },
               }}
               key={`col` + j}
               className="w-16 h-8 border-r border-t border-slate-700/20 relative"
