@@ -31,9 +31,9 @@ export const Hero = () => {
           <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
             <div className="space-y-4 lg:space-y-6">
               <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200/50 shadow-lg">
-                <Sparkles className="h-4 w-4 text-blue-600 mr-2 animate-pulse" />
+                <Sparkles className="h-4 w-4 text-blue-600 mr-2" />
                 <span className="text-blue-700 font-semibold text-sm tracking-wide">Premium Transportation Excellence</span>
-                <div className="ml-2 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                <div className="ml-2 w-2 h-2 bg-blue-500 rounded-full"></div>
               </div>
               
               <h1 className="relative z-50 text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.8] tracking-tight">
