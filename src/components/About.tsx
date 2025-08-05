@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Award, Truck, MapPin, Clock, Star, Sparkles, ArrowRight, Phone, Users } from "lucide-react";
 export const About = () => {
-  return <section className="py-16 bg-white relative overflow-hidden">
+  return <section className="py-8 bg-white relative overflow-hidden">
       {/* Sophisticated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-blue-100/30 to-cyan-100/20 rounded-full blur-3xl animate-float"></div>
