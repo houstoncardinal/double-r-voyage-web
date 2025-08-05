@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
+import { FooterWhite } from "@/components/FooterWhite";
 import { Zap, Truck, Thermometer, MapPin, Phone, CheckCircle2, Star, ArrowRight, Sparkles, Package } from "lucide-react";
 export const DryVanLogistics = () => {
   return <>
@@ -297,7 +297,7 @@ export const DryVanLogistics = () => {
           </div>
         </section>
 
-        <Footer />
+        <FooterWhite />
       </div>
     </>;
 };

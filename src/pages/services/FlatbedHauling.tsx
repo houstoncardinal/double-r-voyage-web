@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
+import { FooterWhite } from "@/components/FooterWhite";
 import { Package, Truck, Wrench, Shield, Phone, CheckCircle2, Star, ArrowRight, Sparkles, Weight } from "lucide-react";
 export const FlatbedHauling = () => {
   return <>
@@ -245,7 +245,7 @@ export const FlatbedHauling = () => {
           </div>
         </section>
 
-        <Footer />
+        <FooterWhite />
       </div>
     </>;
 };

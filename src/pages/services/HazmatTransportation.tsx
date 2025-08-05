@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
+import { FooterWhite } from "@/components/FooterWhite";
 import { Shield, AlertTriangle, FileCheck, Users, Phone, CheckCircle2, Star, ArrowRight, Sparkles } from "lucide-react";
 export const HazmatTransportation = () => {
   return <>
@@ -224,7 +224,7 @@ export const HazmatTransportation = () => {
           </div>
         </section>
 
-        <Footer />
+        <FooterWhite />
       </div>
     </>;
 };
