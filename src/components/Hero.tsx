@@ -4,7 +4,7 @@ import { ArrowRight, Phone, Truck, Shield, Clock, Star, CheckCircle, Sparkles } 
 
 export const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 pt-32 sm:pt-40 lg:pt-48 pb-16 overflow-hidden min-h-screen flex flex-col">
+    <section className="relative bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 pt-32 sm:pt-40 lg:pt-48 pb-0 overflow-hidden min-h-screen flex flex-col">
       {/* Professional gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-white to-slate-50/60"></div>
       

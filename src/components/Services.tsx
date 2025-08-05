@@ -56,7 +56,7 @@ const stats = [
 
 export const Services = () => {
   return (
-    <section className="relative py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
+    <section className="relative pt-12 md:pt-16 pb-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
       {/* Background decoration matching your site aesthetic */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-200/40 to-cyan-200/40 rounded-full opacity-60 animate-float blur-3xl"></div>
