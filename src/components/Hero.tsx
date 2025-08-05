@@ -28,9 +28,9 @@ export const Hero = () => {
       <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start w-full">
           {/* Left Content - Enhanced for mobile */}
-          <div className="space-y-6 lg:space-y-8 animate-slide-in-left text-center lg:text-left">
+          <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
             <div className="space-y-4 lg:space-y-6">
-              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200/50 shadow-lg animate-shimmer">
+              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200/50 shadow-lg">
                 <Sparkles className="h-4 w-4 text-blue-600 mr-2 animate-pulse" />
                 <span className="text-blue-700 font-semibold text-sm tracking-wide">Premium Transportation Excellence</span>
                 <div className="ml-2 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
@@ -40,7 +40,7 @@ export const Hero = () => {
                 <span className="block bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent text-shadow-lg">
                   Delivering
                 </span>
-                <span className="block bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent mt-1 animate-shimmer">
+                <span className="block bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent mt-1">
                   Excellence
                 </span>
                 <span className="block bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mt-1">
@@ -76,7 +76,7 @@ export const Hero = () => {
           </div>
 
           {/* Enhanced services preview cards */}
-          <div className="space-y-4 sm:space-y-6 animate-slide-in-right mt-8 lg:mt-0">
+          <div className="space-y-4 sm:space-y-6 mt-8 lg:mt-0">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-blue-200/30 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
               <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4">
                 <div className="bg-gradient-to-br from-blue-600 to-blue-700 w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg">
