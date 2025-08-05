@@ -115,69 +115,65 @@ export const ModernMobileToolbar = () => {
               </div>
               
               <div className="p-6 space-y-3">
-                {services.map((service, index) => {
-                  const Icon = service.icon;
-                  
-                  // Assign colors by index to ensure correct mapping
-                  const getServiceStylesByIndex = (idx: number) => {
-                    switch (idx) {
-                      case 0: // Auto Transport - BLUE
-                        return {
-                          bgClass: "bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-150",
-                          borderClass: "border border-blue-300/50 hover:border-blue-400/60",
-                          iconClass: "bg-gradient-to-br from-blue-600 to-blue-700",
-                          textClass: "text-blue-700"
-                        };
-                      case 1: // Hazmat Transportation - RED
-                        return {
-                          bgClass: "bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-150",
-                          borderClass: "border border-red-300/50 hover:border-red-400/60",
-                          iconClass: "bg-gradient-to-br from-red-600 to-red-700",
-                          textClass: "text-red-700"
-                        };
-                      case 2: // Flatbed Hauling - ORANGE
-                        return {
-                          bgClass: "bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-150",
-                          borderClass: "border border-orange-300/50 hover:border-orange-400/60",
-                          iconClass: "bg-gradient-to-br from-orange-600 to-orange-700",
-                          textClass: "text-orange-700"
-                        };
-                      case 3: // Dry Van Logistics - GREEN
-                        return {
-                          bgClass: "bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-150",
-                          borderClass: "border border-green-300/50 hover:border-green-400/60",
-                          iconClass: "bg-gradient-to-br from-green-600 to-green-700",
-                          textClass: "text-green-700"
-                        };
-                      default:
-                        return {
-                          bgClass: "bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-150",
-                          borderClass: "border border-blue-300/50 hover:border-blue-400/60",
-                          iconClass: "bg-gradient-to-br from-blue-600 to-blue-700",
-                          textClass: "text-blue-700"
-                        };
-                    }
-                  };
-                  
-                  const styles = getServiceStylesByIndex(index);
-                  
-                  return (
-                    <Link
-                      key={service.name}
-                      to={service.href}
-                      className={`flex items-center space-x-4 p-4 rounded-2xl ${styles.bgClass} ${styles.borderClass} transition-all duration-300 group luxury-shadow`}
-                      onClick={() => setShowServices(false)}
-                    >
-                      <div className={`w-12 h-12 ${styles.iconClass} rounded-xl flex items-center justify-center luxury-shadow-xl group-hover:scale-110 transition-transform duration-300`}>
-                        <Icon className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <span className={`font-semibold text-lg ${styles.textClass}`}>{service.name}</span>
-                        <p className="text-sm text-gray-600">Premium transportation solutions</p>
-                      </div>
-                    </Link>
-                  );
-                })}
+                {/* Auto Transport - Blue */}
+                <Link
+                  to="/services/auto-transport"
+                  className="flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-150 border border-blue-300/50 hover:border-blue-400/60 transition-all duration-300 group luxury-shadow"
+                  onClick={() => setShowServices(false)}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center luxury-shadow-xl group-hover:scale-110 transition-transform duration-300">
+                    <Truck className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <span className="font-semibold text-lg text-blue-700">Auto Transport</span>
+                    <p className="text-sm text-gray-600">Premium transportation solutions</p>
+                  </div>
+                </Link>
+
+                {/* Hazmat Transportation - Red */}
+                <Link
+                  to="/services/hazmat-transportation"
+                  className="flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-150 border border-red-300/50 hover:border-red-400/60 transition-all duration-300 group luxury-shadow"
+                  onClick={() => setShowServices(false)}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center luxury-shadow-xl group-hover:scale-110 transition-transform duration-300">
+                    <Shield className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <span className="font-semibold text-lg text-red-700">Hazmat Transportation</span>
+                    <p className="text-sm text-gray-600">Premium transportation solutions</p>
+                  </div>
+                </Link>
+
+                {/* Flatbed Hauling - Orange */}
+                <Link
+                  to="/services/flatbed-hauling"
+                  className="flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-150 border border-orange-300/50 hover:border-orange-400/60 transition-all duration-300 group luxury-shadow"
+                  onClick={() => setShowServices(false)}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-600 to-orange-700 rounded-xl flex items-center justify-center luxury-shadow-xl group-hover:scale-110 transition-transform duration-300">
+                    <Package className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <span className="font-semibold text-lg text-orange-700">Flatbed Hauling</span>
+                    <p className="text-sm text-gray-600">Premium transportation solutions</p>
+                  </div>
+                </Link>
+
+                {/* Dry Van Logistics - Green */}
+                <Link
+                  to="/services/dry-van-logistics"
+                  className="flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-150 border border-green-300/50 hover:border-green-400/60 transition-all duration-300 group luxury-shadow"
+                  onClick={() => setShowServices(false)}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-700 rounded-xl flex items-center justify-center luxury-shadow-xl group-hover:scale-110 transition-transform duration-300">
+                    <Zap className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <span className="font-semibold text-lg text-green-700">Dry Van Logistics</span>
+                    <p className="text-sm text-gray-600">Premium transportation solutions</p>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
