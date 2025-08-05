@@ -45,9 +45,10 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
             <motion.div
               whileHover={{
                 backgroundColor: getRandomColor(),
-                transition: { duration: 0 },
+                transition: { duration: 0.1 },
               }}
               animate={{
+                backgroundColor: "transparent",
                 transition: { duration: 2 },
               }}
               key={`col` + j}
