@@ -1,28 +1,28 @@
 
 import { Button } from "@/components/ui/button";
-import { Boxes } from "@/components/ui/background-boxes";
 import { ArrowRight, Phone, Truck, Shield, Clock, Star, CheckCircle, Sparkles } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative bg-slate-50 pt-32 sm:pt-40 lg:pt-48 pb-16 overflow-hidden min-h-screen flex flex-col">
-      {/* Animated Background Boxes */}
-      <div className="absolute inset-0 w-full h-full bg-slate-50 z-0">
-        <div className="absolute inset-0 w-full h-full bg-slate-50 z-20 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_70%)] pointer-events-none" />
-        <Boxes />
-      </div>
+    <section className="relative bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 pt-32 sm:pt-40 lg:pt-48 pb-16 overflow-hidden min-h-screen flex flex-col">
+      {/* Professional gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-white to-slate-50/60"></div>
       
       {/* Enhanced background decoration with sophisticated effects */}
       <div className="absolute inset-0 z-10">
-        <div className="absolute top-20 right-10 sm:right-20 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-br from-blue-400/20 to-cyan-400/10 rounded-full opacity-60 animate-float blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 sm:left-20 w-60 sm:w-80 h-60 sm:h-80 bg-gradient-to-br from-purple-400/10 to-blue-400/5 rounded-full opacity-40 animate-float blur-2xl" style={{animationDelay: '3s'}}></div>
+        {/* Primary gradient orbs */}
+        <div className="absolute top-20 right-10 sm:right-20 w-96 sm:w-[500px] h-96 sm:h-[500px] bg-gradient-to-br from-blue-200/30 via-cyan-100/20 to-transparent rounded-full blur-3xl animate-float opacity-60"></div>
+        <div className="absolute bottom-20 left-10 sm:left-20 w-80 sm:w-[400px] h-80 sm:h-[400px] bg-gradient-to-br from-indigo-200/25 via-purple-100/15 to-transparent rounded-full blur-3xl animate-float opacity-50" style={{animationDelay: '3s'}}></div>
         
-        {/* Refined gradient orbs */}
-        <div className="absolute top-32 left-1/4 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-br from-blue-300/10 to-cyan-300/5 rounded-full animate-glow blur-xl"></div>
-        <div className="absolute bottom-32 right-1/4 w-24 sm:w-40 h-24 sm:h-40 bg-gradient-to-br from-emerald-300/10 to-teal-300/5 rounded-full animate-glow blur-xl" style={{animationDelay: '2s'}}></div>
+        {/* Secondary accent gradients */}
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-gradient-to-br from-emerald-200/20 via-teal-100/15 to-transparent rounded-full blur-2xl animate-glow opacity-40"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-gradient-to-br from-blue-300/20 via-cyan-200/15 to-transparent rounded-full blur-2xl animate-glow opacity-35" style={{animationDelay: '2s'}}></div>
         
-        {/* Professional grid pattern overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.15)_1px,transparent_0)] bg-[length:24px_24px] opacity-20"></div>
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.08)_1px,transparent_0)] bg-[length:32px_32px] opacity-30"></div>
+        
+        {/* Light rays effect */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full bg-gradient-to-b from-blue-100/20 via-transparent to-transparent opacity-50"></div>
       </div>
       
       <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex items-center">
