@@ -4,10 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Zap, Truck, Thermometer, MapPin, Phone, CheckCircle2, Star, ArrowRight, Sparkles, Package } from "lucide-react";
-
 export const DryVanLogistics = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Dry Van Logistics Services | General Freight Transport | Double R Transportation</title>
         <meta name="description" content="Professional dry van logistics for general freight, climate-controlled transport, and cross-country deliveries. Last-mile delivery nationwide. Call (832) 282-3128." />
@@ -119,46 +117,35 @@ export const DryVanLogistics = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Cargo We Transport</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  category: "Consumer Goods",
-                  items: ["Electronics", "Clothing & textiles", "Home goods", "Retail merchandise", "E-commerce packages"]
-                },
-                {
-                  category: "Industrial Products",
-                  items: ["Manufacturing supplies", "Raw materials", "Finished goods", "Industrial equipment", "Tools & machinery"]
-                },
-                {
-                  category: "Food & Beverages",
-                  items: ["Non-perishable foods", "Beverages", "Canned goods", "Dry ingredients", "Packaged products"]
-                },
-                {
-                  category: "Medical & Pharma",
-                  items: ["Medical devices", "Pharmaceuticals", "Lab equipment", "Healthcare supplies", "Research materials"]
-                },
-                {
-                  category: "Automotive Parts",
-                  items: ["Auto parts", "Tires", "Accessories", "Tools", "Aftermarket products"]
-                },
-                {
-                  category: "Paper & Printing",
-                  items: ["Paper products", "Printing materials", "Office supplies", "Books & publications", "Packaging materials"]
-                }
-              ].map((category, index) => (
-                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              {[{
+              category: "Consumer Goods",
+              items: ["Electronics", "Clothing & textiles", "Home goods", "Retail merchandise", "E-commerce packages"]
+            }, {
+              category: "Industrial Products",
+              items: ["Manufacturing supplies", "Raw materials", "Finished goods", "Industrial equipment", "Tools & machinery"]
+            }, {
+              category: "Food & Beverages",
+              items: ["Non-perishable foods", "Beverages", "Canned goods", "Dry ingredients", "Packaged products"]
+            }, {
+              category: "Medical & Pharma",
+              items: ["Medical devices", "Pharmaceuticals", "Lab equipment", "Healthcare supplies", "Research materials"]
+            }, {
+              category: "Automotive Parts",
+              items: ["Auto parts", "Tires", "Accessories", "Tools", "Aftermarket products"]
+            }, {
+              category: "Paper & Printing",
+              items: ["Paper products", "Printing materials", "Office supplies", "Books & publications", "Packaging materials"]
+            }].map((category, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-green-600">{category.category}</h3>
                     <div className="space-y-2">
-                      {category.items.map((item) => (
-                        <div key={item} className="flex items-center">
+                      {category.items.map(item => <div key={item} className="flex items-center">
                           <CheckCircle2 className="h-4 w-4 text-green-600 mr-2" />
                           <span className="text-gray-600 text-sm">{item}</span>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -216,38 +203,20 @@ export const DryVanLogistics = () => {
               <div>
                 <h3 className="text-xl font-bold mb-6">Service Features</h3>
                 <div className="space-y-3">
-                  {[
-                    "Real-time GPS tracking",
-                    "Climate-controlled options", 
-                    "24/7 customer support",
-                    "Flexible scheduling",
-                    "Load optimization",
-                    "Electronic logging devices (ELD)"
-                  ].map((feature) => (
-                    <div key={feature} className="flex items-center">
+                  {["Real-time GPS tracking", "Climate-controlled options", "24/7 customer support", "Flexible scheduling", "Load optimization", "Electronic logging devices (ELD)"].map(feature => <div key={feature} className="flex items-center">
                       <CheckCircle2 className="h-5 w-5 text-green-600 mr-3" />
                       <span>{feature}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
 
               <div>
                 <h3 className="text-xl font-bold mb-6">Quality Assurance</h3>
                 <div className="space-y-3">
-                  {[
-                    "DOT compliant operations",
-                    "Full cargo insurance coverage",
-                    "Professional driver network",
-                    "Equipment maintenance programs",
-                    "Safety performance monitoring",
-                    "Customer satisfaction guarantee"
-                  ].map((assurance) => (
-                    <div key={assurance} className="flex items-center">
+                  {["DOT compliant operations", "Full cargo insurance coverage", "Professional driver network", "Equipment maintenance programs", "Safety performance monitoring", "Customer satisfaction guarantee"].map(assurance => <div key={assurance} className="flex items-center">
                       <CheckCircle2 className="h-5 w-5 text-green-600 mr-3" />
                       <span>{assurance}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -319,7 +288,7 @@ export const DryVanLogistics = () => {
                 </Button>
               </a>
               <a href="tel:8322823128">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold">
+                <Button size="lg" variant="outline" className="border-2 border-white hover:bg-white/10 px-8 py-4 text-lg font-semibold text-slate-50">
                   <Phone className="mr-2 h-5 w-5" />
                   Call (832) 282-3128
                 </Button>
@@ -330,6 +299,5 @@ export const DryVanLogistics = () => {
 
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
