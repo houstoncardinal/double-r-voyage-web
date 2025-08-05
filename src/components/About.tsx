@@ -1,14 +1,13 @@
-
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Award, Truck, MapPin, Clock, Star, Sparkles, ArrowRight, Phone, Users } from "lucide-react";
-
 export const About = () => {
-  return (
-    <section className="py-24 bg-white relative overflow-hidden">
+  return <section className="py-24 bg-white relative overflow-hidden">
       {/* Sophisticated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-blue-100/30 to-cyan-100/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-purple-100/20 to-blue-100/15 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-purple-100/20 to-blue-100/15 rounded-full blur-2xl animate-float" style={{
+        animationDelay: '2s'
+      }}></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.08)_1px,transparent_0)] bg-[length:32px_32px] opacity-30"></div>
       </div>
       
@@ -47,18 +46,10 @@ export const About = () => {
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-blue-200/30 shadow-xl hover:shadow-2xl transition-all duration-300">
             <h3 className="text-2xl font-bold text-slate-900 mb-4">Why Choose Us</h3>
             <div className="space-y-3">
-              {[
-                "15+ years of transportation excellence",
-                "DOT certified and fully insured operations", 
-                "Real-time GPS tracking on all shipments",
-                "24/7 customer support and communication",
-                "Specialized expertise in port logistics"
-              ].map((item, index) => (
-                <div key={index} className="flex items-center">
+              {["15+ years of transportation excellence", "DOT certified and fully insured operations", "Real-time GPS tracking on all shipments", "24/7 customer support and communication", "Specialized expertise in port logistics"].map((item, index) => <div key={index} className="flex items-center">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
                   <span className="text-gray-700 font-medium">{item}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -78,7 +69,7 @@ export const About = () => {
               </Button>
             </a>
             <a href="tel:8322823128">
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl">
+              <Button size="lg" variant="outline" className="border-2 border-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl text-slate-50">
                 <Phone className="mr-2 h-5 w-5" />
                 Call (832) 282-3128
               </Button>
@@ -86,6 +77,5 @@ export const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
