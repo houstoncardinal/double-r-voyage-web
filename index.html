@@ -46,6 +46,46 @@
   </head>
 
   <body>
+    <!-- Hidden forms for Netlify to detect during build time -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="company" />
+      <textarea name="message"></textarea>
+    </form>
+    
+    <form name="contact-component" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="company" />
+      <textarea name="message"></textarea>
+    </form>
+    
+    <form name="quote" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="company" />
+      <input type="text" name="serviceType" />
+      <input type="text" name="pickupLocation" />
+      <input type="text" name="deliveryLocation" />
+      <input type="date" name="preferredDate" />
+      <input type="text" name="vehicleType" />
+      <input type="text" name="vehicleYear" />
+      <input type="text" name="vehicleMake" />
+      <input type="text" name="vehicleModel" />
+      <input type="text" name="cargoType" />
+      <input type="text" name="dimensions" />
+      <input type="text" name="weight" />
+      <input type="checkbox" name="expeditedService" />
+      <textarea name="additionalInfo"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
