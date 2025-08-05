@@ -157,18 +157,35 @@ export default function GetAQuote() {
                   <div className="grid md:grid-cols-2 gap-4">
                     {services.map((service) => {
                       const Icon = service.icon;
+                      const isSelected = formData.serviceType === service.value;
+                      
+                      const colorClasses = {
+                        blue: {
+                          border: isSelected ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:border-gray-300",
+                          icon: "bg-gradient-to-br from-blue-600 to-blue-700"
+                        },
+                        red: {
+                          border: isSelected ? "border-red-500 bg-red-50" : "border-gray-200 hover:border-gray-300",
+                          icon: "bg-gradient-to-br from-red-600 to-red-700"
+                        },
+                        green: {
+                          border: isSelected ? "border-green-500 bg-green-50" : "border-gray-200 hover:border-gray-300",
+                          icon: "bg-gradient-to-br from-green-600 to-green-700"
+                        },
+                        purple: {
+                          border: isSelected ? "border-purple-500 bg-purple-50" : "border-gray-200 hover:border-gray-300",
+                          icon: "bg-gradient-to-br from-purple-600 to-purple-700"
+                        }
+                      };
+                      
                       return (
                         <div
                           key={service.value}
-                          className={`cursor-pointer p-4 rounded-xl border-2 transition-all duration-300 ${
-                            formData.serviceType === service.value
-                              ? `border-${service.color}-500 bg-${service.color}-50`
-                              : "border-gray-200 hover:border-gray-300"
-                          }`}
+                          className={`cursor-pointer p-4 rounded-xl border-2 transition-all duration-300 ${colorClasses[service.color as keyof typeof colorClasses].border}`}
                           onClick={() => handleInputChange("serviceType", service.value)}
                         >
                           <div className="flex items-center space-x-3">
-                            <div className={`w-10 h-10 bg-gradient-to-br from-${service.color}-600 to-${service.color}-700 rounded-lg flex items-center justify-center`}>
+                            <div className={`w-10 h-10 ${colorClasses[service.color as keyof typeof colorClasses].icon} rounded-lg flex items-center justify-center`}>
                               <Icon className="h-5 w-5 text-white" />
                             </div>
                             <span className="font-semibold text-gray-900">{service.label}</span>
