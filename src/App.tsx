@@ -1,3 +1,4 @@
+
 import React, { Suspense, lazy } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
@@ -7,8 +8,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 import { CompactMobileToolbar } from "./components/CompactMobileToolbar";
+import { OptimizedLoadingSpinner } from "./components/OptimizedLoadingSpinner";
 
-// Lazy load pages for better performance
+// Lazy load pages with better chunking
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -17,37 +19,48 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const DOTCompliance = lazy(() => import("./pages/DOTCompliance"));
-const AutoTransport = lazy(() => import("./pages/services/AutoTransport").then(module => ({ default: module.AutoTransport })));
-const HazmatTransportation = lazy(() => import("./pages/services/HazmatTransportation").then(module => ({ default: module.HazmatTransportation })));
-const FlatbedHauling = lazy(() => import("./pages/services/FlatbedHauling").then(module => ({ default: module.FlatbedHauling })));
-const DryVanLogistics = lazy(() => import("./pages/services/DryVanLogistics").then(module => ({ default: module.DryVanLogistics })));
 
-// Loading component
-const LoadingSpinner = () => (
-  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
-    <div className="flex flex-col items-center space-y-4">
-      <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
-      <p className="text-gray-600 font-medium">Loading...</p>
-    </div>
-  </div>
+// Service pages with better loading
+const AutoTransport = lazy(() => 
+  import("./pages/services/AutoTransport").then(module => ({ 
+    default: module.AutoTransport 
+  }))
+);
+const HazmatTransportation = lazy(() => 
+  import("./pages/services/HazmatTransportation").then(module => ({ 
+    default: module.HazmatTransportation 
+  }))
+);
+const FlatbedHauling = lazy(() => 
+  import("./pages/services/FlatbedHauling").then(module => ({ 
+    default: module.FlatbedHauling 
+  }))
+);
+const DryVanLogistics = lazy(() => 
+  import("./pages/services/DryVanLogistics").then(module => ({ 
+    default: module.DryVanLogistics 
+  }))
 );
 
-// Optimized QueryClient configuration
+// Optimized QueryClient with better defaults
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      gcTime: 10 * 60 * 1000, // 10 minutes (renamed from cacheTime)
+      staleTime: 10 * 60 * 1000, // 10 minutes
+      gcTime: 15 * 60 * 1000, // 15 minutes
       refetchOnWindowFocus: false,
-      retry: 1,
+      retry: (failureCount, error) => failureCount < 2,
+      retryDelay: attemptIndex => Math.min(1000 * 2 ** attemptIndex, 30000),
     },
   },
 });
 
+// Memoized scroll wrapper
 const ScrollToTopWrapper = React.memo(() => {
   useScrollToTop();
   return null;
 });
+ScrollToTopWrapper.displayName = 'ScrollToTopWrapper';
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -64,13 +77,21 @@ const App = () => (
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@doublerrtransport" />
         <link rel="canonical" href="https://www.doublertransportationllc.com" />
+        
+        {/* Preload critical fonts */}
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" as="style" />
+        
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
       </Helmet>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
           <ScrollToTopWrapper />
-          <Suspense fallback={<LoadingSpinner />}>
+          <Suspense fallback={<OptimizedLoadingSpinner />}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
