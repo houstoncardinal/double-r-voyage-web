@@ -101,6 +101,14 @@
     animation: slideUp 1.4s ease-out forwards;
   }
 
+  .animate-slide-in-left {
+    animation: slideInLeft 1.6s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
   @keyframes slide-in-up {
     0% {
       transform: translateY(100%);
@@ -115,7 +123,6 @@
   .animate-slide-in-up {
     animation: slide-in-up 0.3s ease-out;
   }
-}
 
   .animate-slide-in-left {
     animation: slideInLeft 1.2s ease-out forwards;
