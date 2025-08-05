@@ -117,18 +117,62 @@ export const ModernMobileToolbar = () => {
               <div className="p-6 space-y-3">
                 {services.map((service, index) => {
                   const Icon = service.icon;
+                  
+                  // Define explicit classes for each service to ensure Tailwind includes them
+                  const getServiceStyles = (serviceName: string) => {
+                    switch (serviceName) {
+                      case "Auto Transport":
+                        return {
+                          bgClass: "bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-150",
+                          borderClass: "border border-blue-300/50 hover:border-blue-400/60",
+                          iconClass: "bg-gradient-to-br from-blue-600 to-blue-700",
+                          textClass: "text-blue-700"
+                        };
+                      case "Hazmat Transportation":
+                        return {
+                          bgClass: "bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-150",
+                          borderClass: "border border-red-300/50 hover:border-red-400/60",
+                          iconClass: "bg-gradient-to-br from-red-600 to-red-700",
+                          textClass: "text-red-700"
+                        };
+                      case "Flatbed Hauling":
+                        return {
+                          bgClass: "bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-150",
+                          borderClass: "border border-orange-300/50 hover:border-orange-400/60",
+                          iconClass: "bg-gradient-to-br from-orange-600 to-orange-700",
+                          textClass: "text-orange-700"
+                        };
+                      case "Dry Van Logistics":
+                        return {
+                          bgClass: "bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-150",
+                          borderClass: "border border-green-300/50 hover:border-green-400/60",
+                          iconClass: "bg-gradient-to-br from-green-600 to-green-700",
+                          textClass: "text-green-700"
+                        };
+                      default:
+                        return {
+                          bgClass: "bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-150",
+                          borderClass: "border border-blue-300/50 hover:border-blue-400/60",
+                          iconClass: "bg-gradient-to-br from-blue-600 to-blue-700",
+                          textClass: "text-blue-700"
+                        };
+                    }
+                  };
+                  
+                  const styles = getServiceStyles(service.name);
+                  
                   return (
                     <Link
                       key={service.name}
                       to={service.href}
-                      className={`flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r ${service.colors.bg} hover:${service.colors.bg.replace('50', '100')} border ${service.colors.border} hover:${service.colors.border.replace('300', '400')} transition-all duration-300 group luxury-shadow`}
+                      className={`flex items-center space-x-4 p-4 rounded-2xl ${styles.bgClass} ${styles.borderClass} transition-all duration-300 group luxury-shadow`}
                       onClick={() => setShowServices(false)}
                     >
-                      <div className={`w-12 h-12 bg-gradient-to-br ${service.colors.gradient} rounded-xl flex items-center justify-center luxury-shadow-xl group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`w-12 h-12 ${styles.iconClass} rounded-xl flex items-center justify-center luxury-shadow-xl group-hover:scale-110 transition-transform duration-300`}>
                         <Icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <span className={`font-semibold text-lg ${service.colors.text}`}>{service.name}</span>
+                        <span className={`font-semibold text-lg ${styles.textClass}`}>{service.name}</span>
                         <p className="text-sm text-gray-600">Premium transportation solutions</p>
                       </div>
                     </Link>
