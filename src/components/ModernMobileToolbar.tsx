@@ -18,10 +18,50 @@ export const ModernMobileToolbar = () => {
   ];
 
   const services = [
-    { name: "Auto Transport", href: "/services/auto-transport", icon: Truck },
-    { name: "Hazmat Transportation", href: "/services/hazmat-transportation", icon: Shield },
-    { label: "Flatbed Hauling", href: "/services/flatbed-hauling", icon: Package },
-    { name: "Dry Van Logistics", href: "/services/dry-van-logistics", icon: Zap },
+    { 
+      name: "Auto Transport", 
+      href: "/services/auto-transport", 
+      icon: Truck,
+      colors: {
+        gradient: "from-blue-600 to-blue-700",
+        bg: "from-blue-50 to-blue-100",
+        border: "border-blue-300/50",
+        text: "text-blue-600"
+      }
+    },
+    { 
+      name: "Hazmat Transportation", 
+      href: "/services/hazmat-transportation", 
+      icon: Shield,
+      colors: {
+        gradient: "from-red-600 to-red-700",
+        bg: "from-red-50 to-red-100",
+        border: "border-red-300/50",
+        text: "text-red-600"
+      }
+    },
+    { 
+      name: "Flatbed Hauling", 
+      href: "/services/flatbed-hauling", 
+      icon: Package,
+      colors: {
+        gradient: "from-orange-600 to-orange-700",
+        bg: "from-orange-50 to-orange-100",
+        border: "border-orange-300/50",
+        text: "text-orange-600"
+      }
+    },
+    { 
+      name: "Dry Van Logistics", 
+      href: "/services/dry-van-logistics", 
+      icon: Zap,
+      colors: {
+        gradient: "from-green-600 to-green-700",
+        bg: "from-green-50 to-green-100",
+        border: "border-green-300/50",
+        text: "text-green-600"
+      }
+    },
   ];
 
   // Handle menu item clicks
@@ -81,14 +121,14 @@ export const ModernMobileToolbar = () => {
                     <Link
                       key={service.name}
                       to={service.href}
-                      className="flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-cyan-50 hover:from-blue-100 hover:to-cyan-100 border border-blue-200/30 hover:border-blue-300/50 transition-all duration-300 group luxury-shadow"
+                      className={`flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r ${service.colors.bg} hover:${service.colors.bg.replace('50', '100')} border ${service.colors.border} hover:${service.colors.border.replace('300', '400')} transition-all duration-300 group luxury-shadow`}
                       onClick={() => setShowServices(false)}
                     >
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center luxury-shadow-xl group-hover:scale-110 transition-transform duration-300">
+                      <div className={`w-12 h-12 bg-gradient-to-br ${service.colors.gradient} rounded-xl flex items-center justify-center luxury-shadow-xl group-hover:scale-110 transition-transform duration-300`}>
                         <Icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <span className="font-semibold text-gray-900 text-lg">{service.name}</span>
+                        <span className={`font-semibold text-lg ${service.colors.text}`}>{service.name}</span>
                         <p className="text-sm text-gray-600">Premium transportation solutions</p>
                       </div>
                     </Link>
