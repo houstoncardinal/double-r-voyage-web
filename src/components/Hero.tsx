@@ -42,9 +42,9 @@ export const Hero = () => {
               </h1>
               
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light tracking-wide">
-                Elevating logistics through precision engineering and uncompromising service excellence. 
-                Your premium partner for automotive transport, hazmat logistics, and specialized freight solutions 
-                across America's highways.
+                Double R Transportation delivers reliable auto transport, hazmat shipping, and freight logistics 
+                throughout Houston and nationwide. Your trusted partner for safe, on-time delivery with 
+                full insurance and real-time tracking.
               </p>
             </div>
 
