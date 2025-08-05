@@ -90,9 +90,9 @@ export const CompactMobileToolbar = React.memo(() => {
                       <Link
                         key={service.name}
                         to={service.href}
-                        className="group relative overflow-hidden"
-                        onClick={closeServices}
-                        style={{ touchAction: 'manipulation' }}
+                        className="group relative overflow-hidden block touch-manipulation"
+                        onClick={() => setShowServices(false)}
+                        onTouchStart={() => {}}
                       >
                         <div className={`relative flex flex-col items-center p-4 rounded-xl bg-gradient-to-br ${bgGradients[index]} border border-white/50 hover:border-white/80 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg group-active:scale-[0.98]`}>
                           {/* Subtle shine effect */}
