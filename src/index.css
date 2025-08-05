@@ -479,8 +479,13 @@ html {
 
 /* Selection styling */
   /* Safe area for mobile devices */
-  .safe-area-bottom {
-    padding-bottom: env(safe-area-inset-bottom);
+  .pb-safe {
+    padding-bottom: max(env(safe-area-inset-bottom), 8px);
+  }
+
+  /* Ensure mobile elements are clickable */
+  .pointer-events-auto {
+    pointer-events: auto;
   }
 
 ::selection {
