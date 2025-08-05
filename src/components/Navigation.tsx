@@ -1,21 +1,15 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Menu, X, Phone, ArrowRight, Sparkles, ChevronDown, Truck, Shield, Package, Zap } from "lucide-react";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const serviceItems = [
@@ -53,21 +47,24 @@ export const Navigation = () => {
                 </a>
               ))}
               
-              {/* Services Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger className="text-gray-700 hover:text-blue-600 px-4 py-4 text-base font-semibold transition-all duration-500 relative group tracking-wide flex items-center">
+              {/* Services Dropdown with Hover */}
+              <div className="relative group">
+                <button className="text-gray-700 hover:text-blue-600 px-4 py-4 text-base font-semibold transition-all duration-500 relative tracking-wide flex items-center">
                   Services
                   <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
                   <span className="absolute bottom-2 left-4 right-4 h-0.5 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full"></span>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-80 bg-white border border-gray-200 shadow-2xl rounded-2xl p-2 z-50">
-                  {serviceItems.map((service) => {
-                    const Icon = service.icon;
-                    return (
-                      <DropdownMenuItem key={service.name} className="p-0">
+                </button>
+                
+                {/* Dropdown content that appears on hover */}
+                <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                  <div className="w-80 bg-white border border-gray-200 shadow-2xl rounded-2xl p-2 backdrop-blur-sm">
+                    {serviceItems.map((service) => {
+                      const Icon = service.icon;
+                      return (
                         <a
+                          key={service.name}
                           href={service.href}
-                          className="flex items-start space-x-3 p-4 rounded-xl hover:bg-blue-50 transition-colors duration-300 w-full"
+                          className="flex items-start space-x-3 p-4 rounded-xl hover:bg-blue-50 transition-colors duration-300 w-full block"
                         >
                           <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
                             <Icon className="h-5 w-5 text-white" />
@@ -77,11 +74,11 @@ export const Navigation = () => {
                             <div className="text-sm text-gray-600">{service.description}</div>
                           </div>
                         </a>
-                      </DropdownMenuItem>
-                    );
-                  })}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
