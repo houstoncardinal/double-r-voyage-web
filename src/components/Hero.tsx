@@ -4,15 +4,18 @@ import { ArrowRight, Phone, Truck, Shield, Clock, Star, CheckCircle, Sparkles } 
 
 export const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 pt-32 sm:pt-40 lg:pt-48 pb-0 overflow-hidden min-h-screen flex flex-col">
-      {/* Premium background decoration with enhanced effects */}
+    <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 pt-32 sm:pt-40 lg:pt-48 pb-16 overflow-hidden min-h-screen flex flex-col">
+      {/* Enhanced background decoration with sophisticated effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 sm:right-20 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-br from-blue-200/40 to-cyan-200/30 rounded-full opacity-50 animate-float blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 sm:left-20 w-60 sm:w-80 h-60 sm:h-80 bg-gradient-to-br from-purple-200/30 to-blue-200/25 rounded-full opacity-40 animate-float blur-2xl" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-20 right-10 sm:right-20 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-br from-blue-200/30 to-cyan-200/20 rounded-full opacity-60 animate-float blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 sm:left-20 w-60 sm:w-80 h-60 sm:h-80 bg-gradient-to-br from-purple-200/20 to-blue-200/15 rounded-full opacity-40 animate-float blur-2xl" style={{animationDelay: '3s'}}></div>
         
-        {/* Animated gradient orbs */}
-        <div className="absolute top-32 left-1/4 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-br from-gold-300/15 to-yellow-300/10 rounded-full animate-glow blur-xl"></div>
-        <div className="absolute bottom-32 right-1/4 w-24 sm:w-40 h-24 sm:h-40 bg-gradient-to-br from-emerald-300/15 to-teal-300/10 rounded-full animate-glow blur-xl" style={{animationDelay: '2s'}}></div>
+        {/* Refined gradient orbs */}
+        <div className="absolute top-32 left-1/4 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-br from-blue-300/10 to-cyan-300/5 rounded-full animate-glow blur-xl"></div>
+        <div className="absolute bottom-32 right-1/4 w-24 sm:w-40 h-24 sm:h-40 bg-gradient-to-br from-emerald-300/10 to-teal-300/5 rounded-full animate-glow blur-xl" style={{animationDelay: '2s'}}></div>
+        
+        {/* Professional grid pattern overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.15)_1px,transparent_0)] bg-[length:24px_24px] opacity-20"></div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex items-center">
@@ -20,9 +23,9 @@ export const Hero = () => {
           {/* Left Content - Enhanced for mobile */}
           <div className="space-y-6 lg:space-y-8 animate-slide-in-left text-center lg:text-left">
             <div className="space-y-4 lg:space-y-6">
-              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-blue-50 via-white to-cyan-50 border border-blue-200/50 luxury-shadow backdrop-blur-sm animate-shimmer">
+              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200/50 shadow-lg animate-shimmer">
                 <Sparkles className="h-4 w-4 text-blue-600 mr-2 animate-pulse" />
-                <span className="text-blue-700 font-semibold text-sm tracking-wide">Excellence in Transportation</span>
+                <span className="text-blue-700 font-semibold text-sm tracking-wide">Premium Transportation Excellence</span>
                 <div className="ml-2 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               </div>
               
@@ -90,36 +93,36 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Enhanced services cards */}
+          {/* Enhanced services preview cards */}
           <div className="space-y-4 sm:space-y-6 animate-slide-in-right mt-8 lg:mt-0">
-            <div className="glass-effect rounded-xl sm:rounded-2xl p-4 sm:p-6 luxury-shadow-2xl border border-white/30 luxury-card-hover">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-blue-200/30 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
               <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4">
-                <div className="bg-gradient-to-br from-blue-100 via-blue-50 to-blue-100 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center luxury-shadow">
-                  <Truck className="h-6 w-6 sm:h-7 sm:w-7 text-blue-600" />
+                <div className="bg-gradient-to-br from-blue-600 to-blue-700 w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg">
+                  <Truck className="h-7 w-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 tracking-tight">Auto Transport</h3>
-                  <p className="text-blue-600 font-semibold text-sm sm:text-base tracking-wide">Port to Dealer Excellence</p>
+                  <h3 className="text-xl font-bold text-gray-900 tracking-tight">Premier Auto Transport</h3>
+                  <p className="text-blue-600 font-semibold text-base tracking-wide">Port to Dealer Excellence</p>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">Nationwide coverage with real-time GPS tracking and white-glove handling.</p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-base">Nationwide coverage with real-time GPS tracking and white-glove handling for premium vehicle transportation.</p>
               <div className="flex items-center text-emerald-600">
                 <CheckCircle className="h-4 w-4 mr-2" />
                 <span className="font-medium text-sm tracking-wide">GPS Tracked & Fully Insured</span>
               </div>
             </div>
 
-            <div className="glass-effect rounded-xl sm:rounded-2xl p-4 sm:p-6 luxury-shadow-2xl border border-white/30 luxury-card-hover">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-red-200/30 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
               <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4">
-                <div className="bg-gradient-to-br from-red-100 via-red-50 to-red-100 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center luxury-shadow">
-                  <Shield className="h-6 w-6 sm:h-7 sm:w-7 text-red-600" />
+                <div className="bg-gradient-to-br from-red-600 to-red-700 w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg">
+                  <Shield className="h-7 w-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 tracking-tight">Hazmat Certified</h3>
-                  <p className="text-red-600 font-semibold text-sm sm:text-base tracking-wide">DOT & EPA Compliance</p>
+                  <h3 className="text-xl font-bold text-gray-900 tracking-tight">Hazmat Certified</h3>
+                  <p className="text-red-600 font-semibold text-base tracking-wide">DOT & EPA Compliance</p>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">Expert drivers with advanced certifications for hazardous materials transport.</p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-base">Expert drivers with advanced certifications for secure hazardous materials transport nationwide.</p>
               <div className="flex items-center text-emerald-600">
                 <CheckCircle className="h-4 w-4 mr-2" />
                 <span className="font-medium text-sm tracking-wide">Certified & Compliant</span>

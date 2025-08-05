@@ -1,103 +1,127 @@
 
-import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, Award, Users, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { CheckCircle2, Award, Truck, MapPin, Clock, Star, Sparkles, ArrowRight, Phone, Users } from "lucide-react";
 
 export const About = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <div className="animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Excellence in <span className="text-blue-400">Transportation</span>
-              </h2>
-              <p className="text-xl text-gray-300 leading-relaxed mb-8">
-                Double R Transportation stands as a premier logistics partner, delivering 
-                unmatched precision and reliability in every shipment. Our commitment to 
-                excellence has made us the trusted choice for dealerships, manufacturers, 
-                and businesses nationwide.
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Sophisticated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-blue-100/30 to-cyan-100/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-purple-100/20 to-blue-100/15 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.08)_1px,transparent_0)] bg-[length:32px_32px] opacity-30"></div>
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-50 border border-blue-200/50 shadow-lg mb-8">
+            <Star className="h-5 w-5 text-blue-600 mr-3" />
+            <span className="text-blue-700 font-semibold text-lg tracking-wide">About Our Company</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+            <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+              Driven by Precision,
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
+              Delivered with Power
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Double R Transportation stands as a premier logistics partner, delivering unmatched precision 
+            and reliability in every shipment across America's highways.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="space-y-6">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-blue-200/30 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h3>
+              <p className="text-gray-700 leading-relaxed text-lg">
+                At Double R Transportation, we revolutionize logistics through precision engineering, 
+                uncompromising safety standards, and customer-centric service excellence. Every mile 
+                matters, every delivery counts.
               </p>
             </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex items-start space-x-4">
-                <div className="p-2 bg-blue-600 rounded-lg">
-                  <Award className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold mb-2">Industry Leaders</h4>
-                  <p className="text-gray-300 text-sm">Setting standards in logistics excellence</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="p-2 bg-blue-600 rounded-lg">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold mb-2">Expert Team</h4>
-                  <p className="text-gray-300 text-sm">Professional drivers and logistics specialists</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="p-2 bg-blue-600 rounded-lg">
-                  <CheckCircle className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold mb-2">Proven Results</h4>
-                  <p className="text-gray-300 text-sm">Consistent on-time delivery performance</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="p-2 bg-blue-600 rounded-lg">
-                  <Clock className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold mb-2">24/7 Service</h4>
-                  <p className="text-gray-300 text-sm">Round-the-clock support and monitoring</p>
-                </div>
+            
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-blue-200/30 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Why Choose Us</h3>
+              <div className="space-y-3">
+                {[
+                  "15+ years of transportation excellence",
+                  "DOT certified and fully insured operations", 
+                  "Real-time GPS tracking on all shipments",
+                  "24/7 customer support and communication",
+                  "Specialized expertise in port logistics"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700 font-medium">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/15 transition-all duration-300">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  To provide reliable, safe, and efficient transportation solutions that exceed 
-                  our clients' expectations while maintaining the highest standards of 
-                  professionalism and integrity.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-2 gap-6">
+            {[
+              { number: "15+", label: "Years Experience", icon: Award, color: "blue" },
+              { number: "500+", label: "Deliveries", icon: Truck, color: "green" },
+              { number: "50", label: "States Covered", icon: MapPin, color: "purple" },
+              { number: "24/7", label: "Support", icon: Clock, color: "orange" }
+            ].map((stat, index) => (
+              <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-center">
+                <div className={`w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+                  <stat.icon className="h-8 w-8 text-white" />
+                </div>
+                <div className={`text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-2`}>
+                  {stat.number}
+                </div>
+                <div className="text-gray-600 font-semibold text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/15 transition-all duration-300">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-4">Our Values</h3>
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-blue-400 mr-3" />
-                    Safety first in every operation
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-blue-400 mr-3" />
-                    Reliability you can count on
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-blue-400 mr-3" />
-                    Transparency in all communications
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-blue-400 mr-3" />
-                    Innovation in logistics solutions
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+        {/* Enhanced feature highlights */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          {[
+            { title: "Industry Leaders", desc: "Setting standards in logistics excellence", icon: Award },
+            { title: "Expert Team", desc: "Professional drivers and logistics specialists", icon: Users },
+            { title: "Proven Results", desc: "Consistent on-time delivery performance", icon: CheckCircle2 },
+            { title: "24/7 Service", desc: "Round-the-clock support and monitoring", icon: Clock }
+          ].map((feature, index) => (
+            <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-blue-200/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <feature.icon className="h-6 w-6 text-white" />
+              </div>
+              <h4 className="font-bold text-slate-900 mb-2">{feature.title}</h4>
+              <p className="text-gray-600 text-sm">{feature.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Enhanced CTA Section */}
+        <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 rounded-3xl p-12 text-white text-center shadow-2xl">
+          <h3 className="text-3xl font-bold mb-4">Ready to Experience Excellence?</h3>
+          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+            Join hundreds of satisfied customers who trust Double R Transportation for their premium logistics needs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl shadow-lg">
+                <Sparkles className="mr-2 h-5 w-5" />
+                Get Started Today
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
+            <a href="tel:8322823128">
+              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl">
+                <Phone className="mr-2 h-5 w-5" />
+                Call (832) 282-3128
+              </Button>
+            </a>
           </div>
         </div>
       </div>
