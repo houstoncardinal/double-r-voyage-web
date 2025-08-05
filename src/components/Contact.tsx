@@ -4,8 +4,61 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const encode = (data: any) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact-component",
+          firstName: formData.get("firstName"),
+          lastName: formData.get("lastName"),
+          company: formData.get("company"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          pickupLocation: formData.get("pickupLocation"),
+          deliveryLocation: formData.get("deliveryLocation"),
+          serviceType: formData.get("serviceType"),
+          message: formData.get("message"),
+        })
+      });
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. We'll get right back to you ASAP!",
+      });
+
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Submission Error", 
+        description: "There was an error sending your message. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,7 +136,7 @@ export const Contact = () => {
               <CardTitle className="text-2xl font-bold text-slate-900">Contact Us</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <form name="contact-component" data-netlify="true">
+              <form name="contact-component" data-netlify="true" onSubmit={handleSubmit}>
                 <input type="hidden" name="form-name" value="contact-component" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -174,9 +227,10 @@ export const Contact = () => {
 
                 <Button 
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50"
                 >
-                  Get In Touch
+                  {isSubmitting ? "Sending..." : "Get In Touch"}
                 </Button>
               </form>
 

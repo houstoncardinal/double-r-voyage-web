@@ -10,8 +10,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Truck, Shield, Package, Zap, Clock, CheckCircle, Phone, Mail, Calculator, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function GetAQuote() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -36,11 +39,63 @@ export default function GetAQuote() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const encode = (data: any) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend or email service
-    console.log("Quote request submitted:", formData);
-    alert("Thank you! Your quote request has been submitted. We'll contact you within 24 hours.");
+    setIsSubmitting(true);
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "quote",
+          ...formData,
+          insurance: formData.insurance ? "Yes" : "No",
+          tracking: formData.tracking ? "Yes" : "No",
+          expedited: formData.expedited ? "Yes" : "No",
+        })
+      });
+
+      toast({
+        title: "Quote Request Submitted!",
+        description: "Thank you for your request. We'll get back to you within 24 hours with a detailed quote.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        serviceType: "",
+        pickupLocation: "",
+        deliveryLocation: "",
+        pickupDate: "",
+        deliveryDate: "",
+        cargoType: "",
+        weight: "",
+        dimensions: "",
+        value: "",
+        specialRequirements: "",
+        insurance: false,
+        tracking: false,
+        expedited: false,
+      });
+    } catch (error) {
+      toast({
+        title: "Submission Error",
+        description: "There was an error submitting your request. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const services = [
@@ -365,10 +420,11 @@ export default function GetAQuote() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-12 py-4 text-lg rounded-xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group font-semibold tracking-wide"
+                    disabled={isSubmitting}
+                    className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-12 py-4 text-lg rounded-xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group font-semibold tracking-wide disabled:opacity-50"
                   >
                     <Sparkles className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-500" />
-                    Get My Quote
+                    {isSubmitting ? "Submitting..." : "Get My Quote"}
                     <Calculator className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform duration-500" />
                   </Button>
                   <p className="text-gray-600 text-sm mt-4">

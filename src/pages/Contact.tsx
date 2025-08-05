@@ -6,8 +6,60 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock, Send, Truck, Shield, Star, CheckCircle } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const encode = (data: any) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          firstName: formData.get("firstName"),
+          lastName: formData.get("lastName"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          serviceType: formData.get("serviceType"),
+          pickupLocation: formData.get("pickupLocation"),
+          deliveryLocation: formData.get("deliveryLocation"),
+          message: formData.get("message"),
+        })
+      });
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. We'll get right back to you ASAP!",
+      });
+
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Submission Error",
+        description: "There was an error sending your message. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -68,7 +120,7 @@ export default function Contact() {
                 Fill out the form below and our team will get back to you within 24 hours with a personalized quote.
               </p>
               
-              <form name="contact" data-netlify="true" className="space-y-6">
+              <form name="contact" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
                 <input type="hidden" name="form-name" value="contact" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -175,10 +227,11 @@ export default function Contact() {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 hover:from-blue-700 hover:via-blue-800 hover:to-cyan-700 text-white py-4 text-lg font-semibold rounded-xl shadow-lg"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600 hover:from-blue-700 hover:via-blue-800 hover:to-cyan-700 text-white py-4 text-lg font-semibold rounded-xl shadow-lg disabled:opacity-50"
                 >
                   <Send className="mr-2 h-5 w-5" />
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </div>
