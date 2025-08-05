@@ -17,6 +17,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import DOTCompliance from "./pages/DOTCompliance";
 import GetAQuote from "./pages/GetAQuote";
+import { MobileToolbar } from "./components/MobileToolbar";
 
 const queryClient = new QueryClient();
 
@@ -61,6 +62,7 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <MobileToolbar />
         </BrowserRouter>
       </TooltipProvider>
     </HelmetProvider>
