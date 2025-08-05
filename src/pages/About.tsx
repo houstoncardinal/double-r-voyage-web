@@ -172,7 +172,7 @@ export default function About() {
                 </Button>
               </a>
               <a href="tel:8322823128">
-                <Button size="lg" variant="outline" className="border-2 border-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl text-slate-50">
+                <Button size="lg" variant="outline" className="border-2 border-white px-8 py-4 text-lg font-semibold rounded-xl text-slate-50 bg-transparent">
                   <Phone className="mr-2 h-5 w-5" />
                   Call (832) 282-3128
                 </Button>
