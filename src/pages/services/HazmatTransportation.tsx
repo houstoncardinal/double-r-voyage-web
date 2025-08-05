@@ -4,10 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Shield, AlertTriangle, FileCheck, Users, Phone, CheckCircle2, Star, ArrowRight, Sparkles } from "lucide-react";
-
 export const HazmatTransportation = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Hazmat Transportation Services | DOT & EPA Certified | Double R Transportation</title>
         <meta name="description" content="Expert hazmat transportation with DOT & EPA certification. Specialized drivers, compliant handling, secure transport. Call (832) 282-3128 for hazardous materials shipping." />
@@ -119,18 +117,43 @@ export const HazmatTransportation = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Hazmat Classes We Handle</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { class: "Class 1", name: "Explosives", desc: "Fireworks, ammunition, blasting agents" },
-                { class: "Class 2", name: "Gases", desc: "Compressed, liquefied, dissolved gases" },
-                { class: "Class 3", name: "Flammable Liquids", desc: "Gasoline, diesel, paint, adhesives" },
-                { class: "Class 4", name: "Flammable Solids", desc: "Matches, sulfur, white phosphorus" },
-                { class: "Class 5", name: "Oxidizers", desc: "Hydrogen peroxide, ammonium nitrate" },
-                { class: "Class 6", name: "Toxic Materials", desc: "Pesticides, medical waste, infectious" },
-                { class: "Class 7", name: "Radioactive", desc: "Medical isotopes, uranium, nuclear materials" },
-                { class: "Class 8", name: "Corrosives", desc: "Acids, alkalies, battery fluid" },
-                { class: "Class 9", name: "Miscellaneous", desc: "Dry ice, lithium batteries, asbestos" }
-              ].map((item, index) => (
-                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              {[{
+              class: "Class 1",
+              name: "Explosives",
+              desc: "Fireworks, ammunition, blasting agents"
+            }, {
+              class: "Class 2",
+              name: "Gases",
+              desc: "Compressed, liquefied, dissolved gases"
+            }, {
+              class: "Class 3",
+              name: "Flammable Liquids",
+              desc: "Gasoline, diesel, paint, adhesives"
+            }, {
+              class: "Class 4",
+              name: "Flammable Solids",
+              desc: "Matches, sulfur, white phosphorus"
+            }, {
+              class: "Class 5",
+              name: "Oxidizers",
+              desc: "Hydrogen peroxide, ammonium nitrate"
+            }, {
+              class: "Class 6",
+              name: "Toxic Materials",
+              desc: "Pesticides, medical waste, infectious"
+            }, {
+              class: "Class 7",
+              name: "Radioactive",
+              desc: "Medical isotopes, uranium, nuclear materials"
+            }, {
+              class: "Class 8",
+              name: "Corrosives",
+              desc: "Acids, alkalies, battery fluid"
+            }, {
+              class: "Class 9",
+              name: "Miscellaneous",
+              desc: "Dry ice, lithium batteries, asbestos"
+            }].map((item, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-3">
                       <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-700 rounded-lg flex items-center justify-center mr-3">
@@ -141,8 +164,7 @@ export const HazmatTransportation = () => {
                     <h4 className="font-semibold text-red-600 mb-2">{item.name}</h4>
                     <p className="text-gray-600 text-sm">{item.desc}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -159,38 +181,20 @@ export const HazmatTransportation = () => {
               <div>
                 <h3 className="text-xl font-bold mb-4">Equipment & Technology</h3>
                 <div className="space-y-3">
-                  {[
-                    "Specialized hazmat trailers",
-                    "Temperature monitoring systems", 
-                    "GPS tracking with alerts",
-                    "Emergency response equipment",
-                    "Leak detection systems",
-                    "Fire suppression systems"
-                  ].map((feature) => (
-                    <div key={feature} className="flex items-center">
+                  {["Specialized hazmat trailers", "Temperature monitoring systems", "GPS tracking with alerts", "Emergency response equipment", "Leak detection systems", "Fire suppression systems"].map(feature => <div key={feature} className="flex items-center">
                       <CheckCircle2 className="h-5 w-5 text-green-600 mr-3" />
                       <span>{feature}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
 
               <div>
                 <h3 className="text-xl font-bold mb-4">Documentation & Compliance</h3>
                 <div className="space-y-3">
-                  {[
-                    "Proper placarding and labeling",
-                    "Shipping papers and manifests",
-                    "Emergency response guides",
-                    "Driver hazmat endorsements",
-                    "Route planning and restrictions",
-                    "24/7 emergency response team"
-                  ].map((feature) => (
-                    <div key={feature} className="flex items-center">
+                  {["Proper placarding and labeling", "Shipping papers and manifests", "Emergency response guides", "Driver hazmat endorsements", "Route planning and restrictions", "24/7 emergency response team"].map(feature => <div key={feature} className="flex items-center">
                       <CheckCircle2 className="h-5 w-5 text-green-600 mr-3" />
                       <span>{feature}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -211,7 +215,7 @@ export const HazmatTransportation = () => {
                 </Button>
               </a>
               <a href="tel:8322823128">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold">
+                <Button size="lg" variant="outline" className="border-2 border-white hover:bg-white/10 px-8 py-4 text-lg font-semibold text-slate-50">
                   <Phone className="mr-2 h-5 w-5" />
                   Call (832) 282-3128
                 </Button>
@@ -222,6 +226,5 @@ export const HazmatTransportation = () => {
 
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
