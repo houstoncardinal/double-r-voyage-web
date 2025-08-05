@@ -1,3 +1,6 @@
+import { Helmet } from "react-helmet-async";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -6,7 +9,18 @@ import { Phone, Mail, MapPin, Clock, Send, Truck, Shield, Star, CheckCircle } fr
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <Helmet>
+        <title>Contact Double R Transportation - Get Your Free Quote Today</title>
+        <meta name="description" content="Contact Double R Transportation for premium auto transport, hazmat shipping, and logistics services. Call (832) 282-3128 or get a free quote online. Houston, TX." />
+        <meta name="keywords" content="contact Double R Transportation, get quote Houston auto transport, Houston logistics contact, transportation quote Houston, car shipping quote" />
+        <meta property="og:title" content="Contact Double R Transportation - Get Your Free Quote Today" />
+        <meta property="og:description" content="Ready for premium transportation services? Contact our Houston team for a free quote. Available 24/7 for emergency transport." />
+        <link rel="canonical" href="https://doublerransport.com/contact" />
+      </Helmet>
+      
+      <div className="min-h-screen bg-white">
+        <Navigation />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -251,6 +265,9 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
+    </>
   );
 }

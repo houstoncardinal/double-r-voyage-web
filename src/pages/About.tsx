@@ -1,9 +1,23 @@
+import { Helmet } from "react-helmet-async";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Award, Truck, MapPin, Clock, Star, Sparkles, ArrowRight, Phone, Shield, Users, Target } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <Helmet>
+        <title>About Double R Transportation - Houston's Premier Logistics Company</title>
+        <meta name="description" content="Learn about Double R Transportation's 15+ years of excellence in Houston auto transport, hazmat shipping, and logistics. Driven by precision, delivered with power." />
+        <meta name="keywords" content="about Double R Transportation, Houston logistics company, auto transport company Houston, transportation company history, logistics expertise Houston" />
+        <meta property="og:title" content="About Double R Transportation - Houston's Premier Logistics Company" />
+        <meta property="og:description" content="Discover our mission, values, and 15+ years of transportation excellence serving Houston and nationwide." />
+        <link rel="canonical" href="https://doublerransport.com/about" />
+      </Helmet>
+      
+      <div className="min-h-screen bg-white">
+        <Navigation />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -167,6 +181,9 @@ export default function About() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
+    </>
   );
 }
