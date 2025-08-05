@@ -24,7 +24,7 @@ export const Navigation = React.memo(() => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full glass-effect border-b border-white/20 z-50 luxury-shadow-xl ${isOpen ? 'z-[60]' : ''}`}>
+    <nav className={`fixed top-0 w-full glass-effect border-b border-white/20 luxury-shadow-xl ${isOpen ? 'z-[60]' : 'z-50'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 lg:h-24">
           {/* Logo - Enhanced for mobile */}
@@ -123,8 +123,8 @@ export const Navigation = React.memo(() => {
 
         {/* Mobile Navigation - Enhanced */}
         {isOpen && (
-          <div className="md:hidden fixed inset-0 top-20 bg-white z-[55]">
-            <div className="h-full overflow-y-auto px-4 pt-4 pb-20 space-y-3 glass-effect border-t border-white/20 rounded-b-3xl luxury-shadow-2xl animate-fade-in">
+          <div className="md:hidden">
+            <div className="px-4 pt-4 pb-20 space-y-3 glass-effect border-t border-white/20 rounded-b-3xl luxury-shadow-2xl animate-fade-in min-h-screen bg-white">
               {navItems.map((item, index) => (
                 <Link
                   key={item.name}
