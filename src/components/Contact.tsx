@@ -83,100 +83,102 @@ export const Contact = () => {
               <CardTitle className="text-2xl font-bold text-slate-900">Contact Us</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
+              <form name="contact-component" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact-component" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
                     First Name *
                   </label>
-                  <Input placeholder="John" className="border-slate-300 focus:border-blue-500" />
+                  <Input name="firstName" placeholder="John" className="border-slate-300 focus:border-blue-500" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
                     Last Name *
                   </label>
-                  <Input placeholder="Doe" className="border-slate-300 focus:border-blue-500" />
+                  <Input name="lastName" placeholder="Doe" className="border-slate-300 focus:border-blue-500" />
                 </div>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Company
-                </label>
-                <Input placeholder="Your Company Name" className="border-slate-300 focus:border-blue-500" />
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Email *
+                    Company
                   </label>
-                  <Input 
-                    type="email" 
-                    placeholder="john@company.com" 
-                    className="border-slate-300 focus:border-blue-500" 
+                  <Input name="company" placeholder="Your Company Name" className="border-slate-300 focus:border-blue-500" />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      Email *
+                    </label>
+                    <Input 
+                      name="email"
+                      type="email" 
+                      placeholder="john@company.com" 
+                      className="border-slate-300 focus:border-blue-500" 
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      Phone *
+                    </label>
+                    <Input 
+                      name="phone"
+                      type="tel" 
+                      placeholder="(555) 123-4567" 
+                      className="border-slate-300 focus:border-blue-500" 
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      Pickup Location
+                    </label>
+                    <Input name="pickupLocation" placeholder="City, State" className="border-slate-300 focus:border-blue-500" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      Delivery Location
+                    </label>
+                    <Input name="deliveryLocation" placeholder="City, State" className="border-slate-300 focus:border-blue-500" />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Service Needed
+                  </label>
+                  <select name="serviceType" className="w-full px-3 py-2 border border-slate-300 rounded-md focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                    <option>Select a service...</option>
+                    <option>Auto Transport from Ports</option>
+                    <option>Hazmat Transportation</option>
+                    <option>Flatbed Hauling</option>
+                    <option>Dry Van Logistics</option>
+                    <option>Other Specialty Transport</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Additional Details
+                  </label>
+                  <Textarea 
+                    name="message"
+                    placeholder="Tell us about your transportation needs..." 
+                    className="border-slate-300 focus:border-blue-500 min-h-[120px]"
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Phone *
-                  </label>
-                  <Input 
-                    type="tel" 
-                    placeholder="(555) 123-4567" 
-                    className="border-slate-300 focus:border-blue-500" 
-                  />
-                </div>
-              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Pickup Location
-                  </label>
-                  <Input placeholder="City, State" className="border-slate-300 focus:border-blue-500" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Delivery Location
-                  </label>
-                  <Input placeholder="City, State" className="border-slate-300 focus:border-blue-500" />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Service Needed
-                </label>
-                <select className="w-full px-3 py-2 border border-slate-300 rounded-md focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
-                  <option>Select a service...</option>
-                  <option>Auto Transport from Ports</option>
-                  <option>Hazmat Transportation</option>
-                  <option>Flatbed Hauling</option>
-                  <option>Dry Van Logistics</option>
-                  <option>Other Specialty Transport</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Additional Details
-                </label>
-                <Textarea 
-                  placeholder="Tell us about your transportation needs..." 
-                  className="border-slate-300 focus:border-blue-500 min-h-[120px]"
-                />
-              </div>
-
-              <Button 
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = 'tel:8322823128';
-                }}
-              >
-                Get In Touch
-              </Button>
+                <Button 
+                  type="submit"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  Get In Touch
+                </Button>
+              </form>
 
               <p className="text-sm text-slate-500 text-center">
                 * Required fields. We'll respond within 2 hours during business hours.

@@ -97,6 +97,7 @@ export default function GetAQuote() {
             
             <CardContent>
               <form name="quote" data-netlify="true" onSubmit={handleSubmit} className="space-y-8">
+                <input type="hidden" name="form-name" value="quote" />
                 {/* Contact Information */}
                 <section>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">

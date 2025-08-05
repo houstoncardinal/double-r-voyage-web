@@ -69,6 +69,7 @@ export default function Contact() {
               </p>
               
               <form name="contact" data-netlify="true" className="space-y-6">
+                <input type="hidden" name="form-name" value="contact" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
