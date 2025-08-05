@@ -12,6 +12,9 @@ import { AutoTransport } from "./pages/services/AutoTransport";
 import { HazmatTransportation } from "./pages/services/HazmatTransportation";
 import { FlatbedHauling } from "./pages/services/FlatbedHauling";
 import { DryVanLogistics } from "./pages/services/DryVanLogistics";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import DOTCompliance from "./pages/DOTCompliance";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +46,9 @@ const App = () => (
             <Route path="/services/hazmat-transportation" element={<HazmatTransportation />} />
             <Route path="/services/flatbed-hauling" element={<FlatbedHauling />} />
             <Route path="/services/dry-van-logistics" element={<DryVanLogistics />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/dot-compliance" element={<DOTCompliance />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

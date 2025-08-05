@@ -18,14 +18,13 @@ export const Footer = () => {
           <div className="flex flex-col lg:flex-row justify-between items-start space-y-8 lg:space-y-0 lg:space-x-8">
             {/* Company Brand Section */}
             <div className="flex flex-col items-start space-y-4 text-left w-full lg:w-auto">
-              <div className="flex items-center space-x-3">
-                <div className="bg-gradient-to-br from-blue-500 to-cyan-500 p-3 rounded-2xl luxury-shadow-xl">
-                  <Truck className="h-8 w-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold tracking-tight">Double R</h3>
-                  <h3 className="text-xl font-bold text-blue-400">Transportation LLC</h3>
-                </div>
+              <div>
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent tracking-tight">
+                  Double R{" "}
+                  <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    Transportation
+                  </span>
+                </h3>
               </div>
               
               <p className="text-gray-300 leading-relaxed text-left max-w-md">
@@ -99,9 +98,9 @@ export const Footer = () => {
               © 2025 Double R Transportation LLC. All rights reserved.
             </p>
             <div className="flex space-x-6 text-gray-400 text-sm">
-              <a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors duration-300">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors duration-300">DOT Compliance</a>
+              <a href="/privacy-policy" className="hover:text-white transition-colors duration-300">Privacy Policy</a>
+              <a href="/terms-of-service" className="hover:text-white transition-colors duration-300">Terms of Service</a>
+              <a href="/dot-compliance" className="hover:text-white transition-colors duration-300">DOT Compliance</a>
             </div>
           </div>
         </div>
