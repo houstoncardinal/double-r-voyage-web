@@ -1,3 +1,4 @@
+import React, { Suspense, lazy } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -5,26 +6,48 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useScrollToTop } from "./hooks/useScrollToTop";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
-import { AutoTransport } from "./pages/services/AutoTransport";
-import { HazmatTransportation } from "./pages/services/HazmatTransportation";
-import { FlatbedHauling } from "./pages/services/FlatbedHauling";
-import { DryVanLogistics } from "./pages/services/DryVanLogistics";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
-import DOTCompliance from "./pages/DOTCompliance";
-import GetAQuote from "./pages/GetAQuote";
 import { CompactMobileToolbar } from "./components/CompactMobileToolbar";
 
-const queryClient = new QueryClient();
+// Lazy load pages for better performance
+const Index = lazy(() => import("./pages/Index"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const GetAQuote = lazy(() => import("./pages/GetAQuote"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const DOTCompliance = lazy(() => import("./pages/DOTCompliance"));
+const AutoTransport = lazy(() => import("./pages/services/AutoTransport").then(module => ({ default: module.AutoTransport })));
+const HazmatTransportation = lazy(() => import("./pages/services/HazmatTransportation").then(module => ({ default: module.HazmatTransportation })));
+const FlatbedHauling = lazy(() => import("./pages/services/FlatbedHauling").then(module => ({ default: module.FlatbedHauling })));
+const DryVanLogistics = lazy(() => import("./pages/services/DryVanLogistics").then(module => ({ default: module.DryVanLogistics })));
 
-const ScrollToTopWrapper = () => {
+// Loading component
+const LoadingSpinner = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+    <div className="flex flex-col items-center space-y-4">
+      <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+      <p className="text-gray-600 font-medium">Loading...</p>
+    </div>
+  </div>
+);
+
+// Optimized QueryClient configuration
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      gcTime: 10 * 60 * 1000, // 10 minutes (renamed from cacheTime)
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+});
+
+const ScrollToTopWrapper = React.memo(() => {
   useScrollToTop();
   return null;
-};
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -47,21 +70,22 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTopWrapper />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/services/auto-transport" element={<AutoTransport />} />
-            <Route path="/services/hazmat-transportation" element={<HazmatTransportation />} />
-            <Route path="/services/flatbed-hauling" element={<FlatbedHauling />} />
-            <Route path="/services/dry-van-logistics" element={<DryVanLogistics />} />
-            <Route path="/get-a-quote" element={<GetAQuote />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/dot-compliance" element={<DOTCompliance />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/get-a-quote" element={<GetAQuote />} />
+              <Route path="/services/auto-transport" element={<AutoTransport />} />
+              <Route path="/services/hazmat-transportation" element={<HazmatTransportation />} />
+              <Route path="/services/flatbed-hauling" element={<FlatbedHauling />} />
+              <Route path="/services/dry-van-logistics" element={<DryVanLogistics />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/dot-compliance" element={<DOTCompliance />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
           <CompactMobileToolbar />
         </BrowserRouter>
       </TooltipProvider>

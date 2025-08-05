@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, Grid3X3, Phone, FileText, X, Truck, Shield, Package, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-export const CompactMobileToolbar = () => {
+export const CompactMobileToolbar = React.memo(() => {
   const [showServices, setShowServices] = useState(false);
   const location = useLocation();
+
+  const toggleServices = useCallback(() => setShowServices(prev => !prev), []);
+  const closeServices = useCallback(() => setShowServices(false), []);
 
   const services = [
     { name: "Auto Transport", href: "/services/auto-transport", icon: Truck },
@@ -25,7 +28,7 @@ export const CompactMobileToolbar = () => {
     <>
       {/* Enhanced Luxury Services Modal */}
       {showServices && (
-        <div className="fixed inset-0 bg-black/10 backdrop-blur-sm z-40 md:hidden" onClick={() => setShowServices(false)}>
+        <div className="fixed inset-0 bg-black/10 backdrop-blur-sm z-40 md:hidden" onClick={closeServices}>
           <div className="absolute bottom-20 left-4 right-4">
             <div className="bg-white rounded-2xl shadow-2xl border border-gray-100/50 overflow-hidden backdrop-blur-xl">
               {/* Modal header with subtle glow */}
@@ -35,7 +38,7 @@ export const CompactMobileToolbar = () => {
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => setShowServices(false)}
+                onClick={closeServices}
                     className="h-7 w-7 p-0 rounded-full hover:bg-gray-100/70 transition-all duration-200 shadow-sm"
                   >
                     <X className="h-3.5 w-3.5 text-gray-500" />
@@ -52,7 +55,7 @@ export const CompactMobileToolbar = () => {
                       key={service.name}
                       to={service.href}
                       className="flex items-center space-x-4 p-3 rounded-xl hover:bg-gray-50/80 transition-all duration-200 group border border-transparent hover:border-gray-200/50 hover:shadow-sm"
-                      onClick={() => setShowServices(false)}
+          onClick={closeServices}
                     >
                       <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100/60 group-hover:bg-gray-200/60 transition-all duration-200 shadow-sm">
                         <Icon className="h-4 w-4 text-gray-600 stroke-[1.5]" />
@@ -106,7 +109,7 @@ export const CompactMobileToolbar = () => {
 
               {/* Services */}
               <button 
-                onClick={() => setShowServices(true)}
+                onClick={toggleServices}
                 className={`flex flex-col items-center space-y-1.5 px-5 py-2 transition-all duration-200 relative group ${
                   getActiveState('/services') 
                     ? 'text-gray-900' 
@@ -174,4 +177,4 @@ export const CompactMobileToolbar = () => {
       </div>
     </>
   );
-};
+});

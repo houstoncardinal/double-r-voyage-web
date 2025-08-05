@@ -1,11 +1,14 @@
 
-import { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, ArrowRight, Sparkles, ChevronDown, Truck, Shield, Package, Zap } from "lucide-react";
 
-export const Navigation = () => {
+export const Navigation = React.memo(() => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = useCallback(() => setIsOpen(prev => !prev), []);
+  const closeMenu = useCallback(() => setIsOpen(false), []);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -106,7 +109,7 @@ export const Navigation = () => {
           {/* Mobile menu button - Enhanced */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={toggleMenu}
               className="text-gray-700 hover:text-blue-600 p-3 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300 luxury-shadow"
             >
               {isOpen ? (
@@ -128,7 +131,7 @@ export const Navigation = () => {
                   to={item.href}
                   className="text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 block px-6 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 animate-slide-in-left"
                   style={{ animationDelay: `${index * 0.1}s` }}
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeMenu}
                 >
                   {item.name}
                 </Link>
@@ -145,7 +148,7 @@ export const Navigation = () => {
                       to={service.href}
                       className="flex items-center space-x-3 px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 rounded-2xl transition-all duration-300 animate-slide-in-left"
                       style={{ animationDelay: `${(index + navItems.length) * 0.1}s` }}
-                      onClick={() => setIsOpen(false)}
+                      onClick={closeMenu}
                     >
                       <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
                         <Icon className="h-4 w-4 text-white" />
@@ -178,4 +181,4 @@ export const Navigation = () => {
       </div>
     </nav>
   );
-};
+});

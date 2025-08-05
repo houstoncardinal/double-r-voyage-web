@@ -1,8 +1,10 @@
 
+import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Truck, Phone, Mail, MapPin, Star, ArrowRight, Sparkles } from "lucide-react";
 
-export const Footer = () => {
+export const Footer = React.memo(() => {
   return (
     <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
       {/* Sophisticated background patterns */}
@@ -42,13 +44,13 @@ export const Footer = () => {
 
               {/* Get Quote Button for Mobile */}
               <div className="block lg:hidden pt-4">
-                <a href="/get-a-quote">
+                <Link to="/get-a-quote">
                   <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group">
                     <Sparkles className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
                     Get A Quote
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -79,13 +81,13 @@ export const Footer = () => {
 
               {/* Get Quote Button for Desktop */}
               <div className="hidden lg:block pt-4">
-                <a href="/get-a-quote">
+                <Link to="/get-a-quote">
                   <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group">
                     <Sparkles className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
                     Get A Quote
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -98,13 +100,13 @@ export const Footer = () => {
               © 2025 Double R Transportation LLC. All rights reserved.
             </p>
             <div className="flex space-x-6 text-gray-400 text-sm">
-              <a href="/privacy-policy" className="hover:text-white transition-colors duration-300">Privacy Policy</a>
-              <a href="/terms-of-service" className="hover:text-white transition-colors duration-300">Terms of Service</a>
-              <a href="/dot-compliance" className="hover:text-white transition-colors duration-300">DOT Compliance</a>
+              <Link to="/privacy-policy" className="hover:text-white transition-colors duration-300">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="hover:text-white transition-colors duration-300">Terms of Service</Link>
+              <Link to="/dot-compliance" className="hover:text-white transition-colors duration-300">DOT Compliance</Link>
             </div>
           </div>
         </div>
       </div>
     </footer>
   );
-};
+});
