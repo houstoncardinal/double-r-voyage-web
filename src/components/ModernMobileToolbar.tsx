@@ -118,31 +118,31 @@ export const ModernMobileToolbar = () => {
                 {services.map((service, index) => {
                   const Icon = service.icon;
                   
-                  // Define explicit classes for each service to ensure Tailwind includes them
-                  const getServiceStyles = (serviceName: string) => {
-                    switch (serviceName) {
-                      case "Auto Transport":
+                  // Assign colors by index to ensure correct mapping
+                  const getServiceStylesByIndex = (idx: number) => {
+                    switch (idx) {
+                      case 0: // Auto Transport - BLUE
                         return {
                           bgClass: "bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-150",
                           borderClass: "border border-blue-300/50 hover:border-blue-400/60",
                           iconClass: "bg-gradient-to-br from-blue-600 to-blue-700",
                           textClass: "text-blue-700"
                         };
-                      case "Hazmat Transportation":
+                      case 1: // Hazmat Transportation - RED
                         return {
                           bgClass: "bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-150",
                           borderClass: "border border-red-300/50 hover:border-red-400/60",
                           iconClass: "bg-gradient-to-br from-red-600 to-red-700",
                           textClass: "text-red-700"
                         };
-                      case "Flatbed Hauling":
+                      case 2: // Flatbed Hauling - ORANGE
                         return {
                           bgClass: "bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-150",
                           borderClass: "border border-orange-300/50 hover:border-orange-400/60",
                           iconClass: "bg-gradient-to-br from-orange-600 to-orange-700",
                           textClass: "text-orange-700"
                         };
-                      case "Dry Van Logistics":
+                      case 3: // Dry Van Logistics - GREEN
                         return {
                           bgClass: "bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-150",
                           borderClass: "border border-green-300/50 hover:border-green-400/60",
@@ -159,7 +159,7 @@ export const ModernMobileToolbar = () => {
                     }
                   };
                   
-                  const styles = getServiceStyles(service.name);
+                  const styles = getServiceStylesByIndex(index);
                   
                   return (
                     <Link
