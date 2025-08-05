@@ -4,10 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Package, Truck, Wrench, Shield, Phone, CheckCircle2, Star, ArrowRight, Sparkles, Weight } from "lucide-react";
-
 export const FlatbedHauling = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Flatbed Hauling Services | Heavy Equipment Transport | Double R Transportation</title>
         <meta name="description" content="Professional flatbed hauling for heavy equipment, steel, machinery, and oversized loads. Expert load securement nationwide. Call (832) 282-3128 for flatbed transport." />
@@ -70,43 +68,35 @@ export const FlatbedHauling = () => {
             <h2 className="text-3xl font-bold text-center mb-12">What We Transport</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Wrench,
-                  title: "Construction Equipment",
-                  items: ["Excavators", "Bulldozers", "Cranes", "Loaders", "Compactors"]
-                },
-                {
-                  icon: Weight,
-                  title: "Steel & Materials",
-                  items: ["Steel beams", "Rebar", "Pipes", "Coils", "Structural steel"]
-                },
-                {
-                  icon: Package,
-                  title: "Industrial Machinery",
-                  items: ["Manufacturing equipment", "Generators", "Transformers", "Tanks", "Processing units"]
-                }
-              ].map((category, index) => {
-                const Icon = category.icon;
-                return (
-                  <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              {[{
+              icon: Wrench,
+              title: "Construction Equipment",
+              items: ["Excavators", "Bulldozers", "Cranes", "Loaders", "Compactors"]
+            }, {
+              icon: Weight,
+              title: "Steel & Materials",
+              items: ["Steel beams", "Rebar", "Pipes", "Coils", "Structural steel"]
+            }, {
+              icon: Package,
+              title: "Industrial Machinery",
+              items: ["Manufacturing equipment", "Generators", "Transformers", "Tanks", "Processing units"]
+            }].map((category, index) => {
+              const Icon = category.icon;
+              return <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <CardContent className="p-6">
                       <div className="w-12 h-12 bg-gradient-to-br from-orange-600 to-orange-700 rounded-xl flex items-center justify-center mb-4">
                         <Icon className="h-6 w-6 text-white" />
                       </div>
                       <h3 className="text-xl font-bold mb-4">{category.title}</h3>
                       <div className="space-y-2">
-                        {category.items.map((item) => (
-                          <div key={item} className="flex items-center">
+                        {category.items.map(item => <div key={item} className="flex items-center">
                             <CheckCircle2 className="h-4 w-4 text-green-600 mr-2" />
                             <span className="text-gray-600">{item}</span>
-                          </div>
-                        ))}
+                          </div>)}
                       </div>
                     </CardContent>
-                  </Card>
-                );
-              })}
+                  </Card>;
+            })}
             </div>
           </div>
         </section>
@@ -164,38 +154,20 @@ export const FlatbedHauling = () => {
               <div>
                 <h3 className="text-xl font-bold mb-6">Securement Equipment</h3>
                 <div className="space-y-3">
-                  {[
-                    "Heavy-duty chains and binders",
-                    "Straps and ratchet tie-downs", 
-                    "Edge protection and padding",
-                    "Blocking and bracing materials",
-                    "Specialized cradles and fixtures",
-                    "Tarps and weather protection"
-                  ].map((equipment) => (
-                    <div key={equipment} className="flex items-center">
+                  {["Heavy-duty chains and binders", "Straps and ratchet tie-downs", "Edge protection and padding", "Blocking and bracing materials", "Specialized cradles and fixtures", "Tarps and weather protection"].map(equipment => <div key={equipment} className="flex items-center">
                       <CheckCircle2 className="h-5 w-5 text-green-600 mr-3" />
                       <span>{equipment}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
 
               <div>
                 <h3 className="text-xl font-bold mb-6">Safety Protocols</h3>
                 <div className="space-y-3">
-                  {[
-                    "DOT compliance inspections",
-                    "Weight distribution analysis",
-                    "Route planning for restrictions",
-                    "Load documentation and permits",
-                    "Driver training and certification",
-                    "Real-time monitoring during transport"
-                  ].map((protocol) => (
-                    <div key={protocol} className="flex items-center">
+                  {["DOT compliance inspections", "Weight distribution analysis", "Route planning for restrictions", "Load documentation and permits", "Driver training and certification", "Real-time monitoring during transport"].map(protocol => <div key={protocol} className="flex items-center">
                       <CheckCircle2 className="h-5 w-5 text-green-600 mr-3" />
                       <span>{protocol}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -264,7 +236,7 @@ export const FlatbedHauling = () => {
                 </Button>
               </a>
               <a href="tel:8322823128">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold">
+                <Button size="lg" variant="outline" className="border-2 border-white hover:bg-white/10 px-8 py-4 text-lg font-semibold text-slate-50">
                   <Phone className="mr-2 h-5 w-5" />
                   Call (832) 282-3128
                 </Button>
@@ -275,6 +247,5 @@ export const FlatbedHauling = () => {
 
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
