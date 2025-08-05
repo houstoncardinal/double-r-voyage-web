@@ -1,16 +1,15 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Truck, Phone, Mail, MapPin, Star, ArrowRight, Sparkles } from "lucide-react";
-
 export const Footer = React.memo(() => {
-  return (
-    <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+  return <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
       {/* Sophisticated background patterns */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-10 left-10 w-48 h-48 bg-gradient-to-br from-purple-500/5 to-blue-500/5 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-10 left-10 w-48 h-48 bg-gradient-to-br from-purple-500/5 to-blue-500/5 rounded-full blur-3xl animate-float" style={{
+        animationDelay: '2s'
+      }}></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.03),transparent_70%)]"></div>
       </div>
 
@@ -35,9 +34,7 @@ export const Footer = React.memo(() => {
               
               <div className="flex items-center space-x-2">
                 <div className="flex space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />)}
                 </div>
                 <span className="text-gray-400 text-sm font-medium">5.0 Excellence Rating</span>
               </div>
@@ -82,7 +79,7 @@ export const Footer = React.memo(() => {
               {/* Get Quote Button for Desktop */}
               <div className="hidden lg:block pt-4">
                 <Link to="/get-a-quote">
-                  <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group">
+                  <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 group bg-transparent text-slate-50">
                     <Sparkles className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
                     Get A Quote
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -107,6 +104,5 @@ export const Footer = React.memo(() => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 });
