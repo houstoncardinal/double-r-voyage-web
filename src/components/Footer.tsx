@@ -1,5 +1,6 @@
 
-import { Truck, Phone, Mail, MapPin, Star, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Truck, Phone, Mail, MapPin, Star, ArrowRight, Sparkles } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -14,9 +15,9 @@ export const Footer = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-12">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0 md:space-x-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start space-y-8 lg:space-y-0 lg:space-x-8">
             {/* Company Brand Section */}
-            <div className="flex flex-col items-center md:items-start space-y-4">
+            <div className="flex flex-col items-start space-y-4 text-left w-full lg:w-auto">
               <div className="flex items-center space-x-3">
                 <div className="bg-gradient-to-br from-blue-500 to-cyan-500 p-3 rounded-2xl luxury-shadow-xl">
                   <Truck className="h-8 w-8 text-white" />
@@ -27,7 +28,7 @@ export const Footer = () => {
                 </div>
               </div>
               
-              <p className="text-gray-300 leading-relaxed text-center md:text-left max-w-md">
+              <p className="text-gray-300 leading-relaxed text-left max-w-md">
                 Delivering precision and excellence across America's highways. Your trusted partner for premium logistics solutions.
               </p>
               
@@ -39,10 +40,21 @@ export const Footer = () => {
                 </div>
                 <span className="text-gray-400 text-sm font-medium">5.0 Excellence Rating</span>
               </div>
+
+              {/* Get Quote Button for Mobile */}
+              <div className="block lg:hidden pt-4">
+                <a href="#contact">
+                  <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group">
+                    <Sparkles className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
+                    Get Quote
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </a>
+              </div>
             </div>
 
             {/* Contact Info */}
-            <div className="flex flex-col items-center md:items-end space-y-3">
+            <div className="flex flex-col items-start lg:items-end space-y-3 w-full lg:w-auto">
               <div className="flex items-center space-x-3 group">
                 <div className="bg-gradient-to-br from-blue-500 to-cyan-500 p-2 rounded-xl luxury-shadow group-hover:luxury-shadow-xl transition-all duration-300">
                   <Phone className="h-4 w-4 text-white" />
@@ -64,6 +76,17 @@ export const Footer = () => {
                   <MapPin className="h-4 w-4 text-white" />
                 </div>
                 <span className="text-gray-300">Nationwide Coverage</span>
+              </div>
+
+              {/* Get Quote Button for Desktop */}
+              <div className="hidden lg:block pt-4">
+                <a href="#contact">
+                  <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group">
+                    <Sparkles className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
+                    Get Quote
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
