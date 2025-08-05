@@ -67,30 +67,6 @@ export const Hero = () => {
               </a>
             </div>
 
-            {/* Enhanced trust indicators - Mobile optimized */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-8 sm:pt-12">
-              <div className="text-center group animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <div className="bg-gradient-to-br from-blue-100 via-blue-50 to-blue-100 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 luxury-shadow-xl group-hover:luxury-shadow-2xl transition-all duration-500 group-hover:scale-110 luxury-card-hover">
-                  <Truck className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
-                </div>
-                <div className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">500+</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-medium tracking-wide">Premium Deliveries</div>
-              </div>
-              <div className="text-center group animate-fade-in" style={{animationDelay: '0.4s'}}>
-                <div className="bg-gradient-to-br from-emerald-100 via-emerald-50 to-emerald-100 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 luxury-shadow-xl group-hover:luxury-shadow-2xl transition-all duration-500 group-hover:scale-110 luxury-card-hover">
-                  <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-600" />
-                </div>
-                <div className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">100%</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-medium tracking-wide">Fully Insured</div>
-              </div>
-              <div className="text-center group animate-fade-in" style={{animationDelay: '0.6s'}}>
-                <div className="bg-gradient-to-br from-orange-100 via-orange-50 to-orange-100 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 luxury-shadow-xl group-hover:luxury-shadow-2xl transition-all duration-500 group-hover:scale-110 luxury-card-hover">
-                  <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-orange-600" />
-                </div>
-                <div className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">24/7</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-medium tracking-wide">Concierge Support</div>
-              </div>
-            </div>
           </div>
 
           {/* Enhanced services preview cards */}
@@ -132,18 +108,18 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Luxury Scrolling Banner - Enhanced with more spacing and premium styling */}
-      <div className="relative z-10 w-full mt-16 sm:mt-20 lg:mt-24">
+      {/* Enhanced Scrolling Banner with faster animation */}
+      <div className="relative z-10 w-full mt-12 sm:mt-16 lg:mt-20">
         <div className="h-px bg-gradient-to-r from-transparent via-blue-300/50 to-transparent"></div>
         
         <div className="bg-gradient-to-r from-blue-800 via-blue-700 to-blue-800 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-cyan-500/10 to-blue-600/20 animate-shimmer"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 via-cyan-500/20 to-blue-600/30 animate-shimmer"></div>
           <div className="absolute inset-0">
-            <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-blue-900/30 via-transparent to-blue-900/30"></div>
+            <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-blue-900/40 via-transparent to-blue-900/40"></div>
           </div>
           
-          <div className="relative z-10 py-5 sm:py-6">
-            <div className="animate-marquee whitespace-nowrap">
+          <div className="relative z-10 py-4 sm:py-5">
+            <div className="animate-marquee-fast whitespace-nowrap">
               <span className="text-white font-bold text-lg sm:text-xl tracking-wide mx-12 inline-flex items-center">
                 <span className="text-2xl mr-3">🏙️</span>
                 HOUSTON ↔ NATIONWIDE TRANSPORT
