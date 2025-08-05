@@ -4,10 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Truck, Shield, MapPin, Clock, Phone, CheckCircle2, Star, ArrowRight, Sparkles } from "lucide-react";
-
 export const AutoTransport = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Auto Transport Services | Port to Dealer Vehicle Transportation | Double R Transportation</title>
         <meta name="description" content="Professional auto transport from major ports to dealerships nationwide. GPS tracking, full insurance, white-glove handling. Call (832) 282-3128 for premium vehicle transportation." />
@@ -109,20 +107,29 @@ export const AutoTransport = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Our Transport Process</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { step: "1", title: "Port Pickup", desc: "Secure vehicle retrieval from designated port facilities" },
-                { step: "2", title: "Pre-Transport Inspection", desc: "Detailed condition assessment and documentation" },
-                { step: "3", title: "Secure Loading", desc: "Professional loading with specialized equipment" },
-                { step: "4", title: "Dealership Delivery", desc: "On-time delivery to your specified location" }
-              ].map((item, index) => (
-                <div key={index} className="text-center">
+              {[{
+              step: "1",
+              title: "Port Pickup",
+              desc: "Secure vehicle retrieval from designated port facilities"
+            }, {
+              step: "2",
+              title: "Pre-Transport Inspection",
+              desc: "Detailed condition assessment and documentation"
+            }, {
+              step: "3",
+              title: "Secure Loading",
+              desc: "Professional loading with specialized equipment"
+            }, {
+              step: "4",
+              title: "Dealership Delivery",
+              desc: "On-time delivery to your specified location"
+            }].map((item, index) => <div key={index} className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">
                     {item.step}
                   </div>
                   <h3 className="text-lg font-bold mb-2">{item.title}</h3>
                   <p className="text-gray-600">{item.desc}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -139,24 +146,20 @@ export const AutoTransport = () => {
               <div>
                 <h3 className="text-xl font-bold mb-4">Major Port Facilities</h3>
                 <div className="space-y-2">
-                  {["Port of Houston", "Port of Long Beach", "Port of Newark", "Port of Savannah", "Port of Charleston", "Port of Baltimore"].map((port) => (
-                    <div key={port} className="flex items-center">
+                  {["Port of Houston", "Port of Long Beach", "Port of Newark", "Port of Savannah", "Port of Charleston", "Port of Baltimore"].map(port => <div key={port} className="flex items-center">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2" />
                       <span>{port}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
 
               <div>
                 <h3 className="text-xl font-bold mb-4">Service Benefits</h3>
                 <div className="space-y-2">
-                  {["Door-to-door delivery", "Expedited shipping options", "Multiple vehicle handling", "Dealership coordination", "Custom scheduling", "Insurance documentation"].map((benefit) => (
-                    <div key={benefit} className="flex items-center">
+                  {["Door-to-door delivery", "Expedited shipping options", "Multiple vehicle handling", "Dealership coordination", "Custom scheduling", "Insurance documentation"].map(benefit => <div key={benefit} className="flex items-center">
                       <CheckCircle2 className="h-4 w-4 text-green-600 mr-2" />
                       <span>{benefit}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -177,7 +180,7 @@ export const AutoTransport = () => {
                 </Button>
               </a>
               <a href="tel:8322823128">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold">
+                <Button size="lg" variant="outline" className="border-2 border-white hover:bg-white/10 px-8 py-4 text-lg font-semibold text-slate-50">
                   <Phone className="mr-2 h-5 w-5" />
                   Call (832) 282-3128
                 </Button>
@@ -188,6 +191,5 @@ export const AutoTransport = () => {
 
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
