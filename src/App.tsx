@@ -30,10 +30,10 @@ const App = () => (
         <meta property="og:title" content="Double R Transportation - Premium Logistics Solutions" />
         <meta property="og:description" content="Driven by Precision. Delivered with Power. Premium transportation solutions from major ports nationwide." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://doublerransport.com" />
+        <meta property="og:url" content="https://www.doublertransportationllc.com" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@doublerrtransport" />
-        <link rel="canonical" href="https://doublerransport.com" />
+        <link rel="canonical" href="https://www.doublertransportationllc.com" />
       </Helmet>
       <TooltipProvider>
         <Toaster />

@@ -13,7 +13,7 @@ export const FlatbedHauling = () => {
         <meta property="og:title" content="Flatbed Hauling Services | Double R Transportation" />
         <meta property="og:description" content="Expert flatbed transportation for heavy equipment and oversized loads with professional securement." />
         <meta property="og:type" content="service" />
-        <link rel="canonical" href="https://doublerransport.com/services/flatbed-hauling" />
+        <link rel="canonical" href="https://www.doublertransportationllc.com/services/flatbed-hauling" />
       </Helmet>
 
       <div className="min-h-screen">

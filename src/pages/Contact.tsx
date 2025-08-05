@@ -16,7 +16,7 @@ export default function Contact() {
         <meta name="keywords" content="contact Double R Transportation, get quote Houston auto transport, Houston logistics contact, transportation quote Houston, car shipping quote" />
         <meta property="og:title" content="Contact Double R Transportation - Get Your Free Quote Today" />
         <meta property="og:description" content="Ready for premium transportation services? Contact our Houston team for a free quote. Available 24/7 for emergency transport." />
-        <link rel="canonical" href="https://doublerransport.com/contact" />
+        <link rel="canonical" href="https://www.doublertransportationllc.com/contact" />
       </Helmet>
       
       <div className="min-h-screen bg-white">
@@ -204,8 +204,8 @@ export default function Contact() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <a href="mailto:info@doublertransport.com" className="text-xl font-semibold text-blue-600 hover:text-blue-700">
-                      info@doublertransport.com
+                    <a href="mailto:info@doublertransportationllc.com" className="text-xl font-semibold text-blue-600 hover:text-blue-700">
+                      info@doublertransportationllc.com
                     </a>
                     <p className="text-gray-600 mt-2">We'll respond within 4 hours</p>
                   </CardContent>

@@ -67,7 +67,7 @@ export const Footer = () => {
                 <div className="bg-gradient-to-br from-emerald-500 to-teal-500 p-2 rounded-xl luxury-shadow group-hover:luxury-shadow-xl transition-all duration-300">
                   <Mail className="h-4 w-4 text-white" />
                 </div>
-                <span className="text-gray-300">info@doublerransport.com</span>
+                <span className="text-gray-300">info@doublertransportationllc.com</span>
               </div>
               
               <div className="flex items-center space-x-3 group">

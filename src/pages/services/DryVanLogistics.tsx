@@ -13,7 +13,7 @@ export const DryVanLogistics = () => {
         <meta property="og:title" content="Dry Van Logistics Services | Double R Transportation" />
         <meta property="og:description" content="Reliable dry van transportation for general freight with climate-controlled options." />
         <meta property="og:type" content="service" />
-        <link rel="canonical" href="https://doublerransport.com/services/dry-van-logistics" />
+        <link rel="canonical" href="https://www.doublertransportationllc.com/services/dry-van-logistics" />
       </Helmet>
 
       <div className="min-h-screen">

@@ -370,9 +370,9 @@ export default function GetAQuote() {
                 <Phone className="h-5 w-5" />
                 <span className="font-semibold">(832) 282-3128</span>
               </a>
-              <a href="mailto:info@doublerransport.com" className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors">
+              <a href="mailto:info@doublertransportationllc.com" className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors">
                 <Mail className="h-5 w-5" />
-                <span className="font-semibold">info@doublerransport.com</span>
+                <span className="font-semibold">info@doublertransportationllc.com</span>
               </a>
             </div>
           </div>

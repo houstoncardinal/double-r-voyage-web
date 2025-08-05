@@ -135,7 +135,7 @@ export default function DOTCompliance() {
                 <div className="p-4 bg-gray-50 rounded-lg">
                   <p className="font-semibold">Double R Transportation LLC</p>
                   <p>Phone: (832) 282-3128</p>
-                  <p>Email: info@doublerransport.com</p>
+                  <p>Email: info@doublertransportationllc.com</p>
                   <div className="mt-4 flex items-center text-sm text-gray-600">
                     <Clock className="h-4 w-4 mr-2" />
                     <span>Compliance documentation available 24/7 upon request</span>

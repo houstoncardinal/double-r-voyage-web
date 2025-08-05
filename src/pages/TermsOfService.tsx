@@ -81,7 +81,7 @@ export default function TermsOfService() {
                 <div className="mt-4 p-4 bg-gray-50 rounded-lg">
                   <p className="font-semibold">Double R Transportation LLC</p>
                   <p>Phone: (832) 282-3128</p>
-                  <p>Email: info@doublerransport.com</p>
+                  <p>Email: info@doublertransportationllc.com</p>
                 </div>
               </section>
             </div>

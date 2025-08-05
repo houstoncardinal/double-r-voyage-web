@@ -13,7 +13,7 @@ export const AutoTransport = () => {
         <meta property="og:title" content="Auto Transport Services | Double R Transportation" />
         <meta property="og:description" content="Premium auto transport from ports to dealerships with GPS tracking and full insurance coverage." />
         <meta property="og:type" content="service" />
-        <link rel="canonical" href="https://doublerransport.com/services/auto-transport" />
+        <link rel="canonical" href="https://www.doublertransportationllc.com/services/auto-transport" />
       </Helmet>
 
       <div className="min-h-screen">

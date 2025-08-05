@@ -11,7 +11,7 @@ export default function About() {
         <meta name="keywords" content="about Double R Transportation, Houston logistics company, auto transport company Houston, transportation company history, logistics expertise Houston" />
         <meta property="og:title" content="About Double R Transportation - Houston's Premier Logistics Company" />
         <meta property="og:description" content="Discover our mission, values, and 15+ years of transportation excellence serving Houston and nationwide." />
-        <link rel="canonical" href="https://doublerransport.com/about" />
+        <link rel="canonical" href="https://www.doublertransportationllc.com/about" />
       </Helmet>
       
       <div className="min-h-screen bg-white">

@@ -13,7 +13,7 @@ export const HazmatTransportation = () => {
         <meta property="og:title" content="Hazmat Transportation Services | Double R Transportation" />
         <meta property="og:description" content="Certified hazmat transportation with expert drivers and specialized equipment." />
         <meta property="og:type" content="service" />
-        <link rel="canonical" href="https://doublerransport.com/services/hazmat-transportation" />
+        <link rel="canonical" href="https://www.doublertransportationllc.com/services/hazmat-transportation" />
       </Helmet>
 
       <div className="min-h-screen">
