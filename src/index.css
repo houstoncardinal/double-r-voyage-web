@@ -478,6 +478,11 @@ html {
 }
 
 /* Selection styling */
+  /* Safe area for mobile devices */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
 ::selection {
   background-color: rgba(59, 130, 246, 0.3);
   color: #1e293b;
