@@ -68,7 +68,7 @@ export default function Contact() {
                 Fill out the form below and our team will get back to you within 24 hours with a personalized quote.
               </p>
               
-              <form className="space-y-6">
+              <form name="contact" data-netlify="true" className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -76,6 +76,7 @@ export default function Contact() {
                     </label>
                     <Input 
                       type="text" 
+                      name="firstName"
                       placeholder="John" 
                       className="w-full"
                       required 
@@ -87,6 +88,7 @@ export default function Contact() {
                     </label>
                     <Input 
                       type="text" 
+                      name="lastName"
                       placeholder="Doe" 
                       className="w-full"
                       required 
@@ -100,6 +102,7 @@ export default function Contact() {
                   </label>
                   <Input 
                     type="email" 
+                    name="email"
                     placeholder="john@example.com" 
                     className="w-full"
                     required 
@@ -112,6 +115,7 @@ export default function Contact() {
                   </label>
                   <Input 
                     type="tel" 
+                    name="phone"
                     placeholder="(555) 123-4567" 
                     className="w-full"
                     required 
@@ -122,7 +126,7 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Service Type
                   </label>
-                  <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                  <select name="serviceType" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                     <option value="">Select a service</option>
                     <option value="auto-transport">Auto Transport</option>
                     <option value="hazmat">Hazmat Transportation</option>
@@ -138,6 +142,7 @@ export default function Contact() {
                     </label>
                     <Input 
                       type="text" 
+                      name="pickupLocation"
                       placeholder="City, State" 
                       className="w-full"
                     />
@@ -148,6 +153,7 @@ export default function Contact() {
                     </label>
                     <Input 
                       type="text" 
+                      name="deliveryLocation"
                       placeholder="City, State" 
                       className="w-full"
                     />
@@ -159,6 +165,7 @@ export default function Contact() {
                     Message
                   </label>
                   <Textarea 
+                    name="message"
                     placeholder="Tell us about your transportation needs..."
                     className="w-full min-h-[120px]"
                   />

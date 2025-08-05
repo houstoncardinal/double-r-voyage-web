@@ -96,7 +96,7 @@ export default function GetAQuote() {
             </CardHeader>
             
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form name="quote" data-netlify="true" onSubmit={handleSubmit} className="space-y-8">
                 {/* Contact Information */}
                 <section>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
@@ -108,6 +108,7 @@ export default function GetAQuote() {
                       <Label htmlFor="name">Full Name *</Label>
                       <Input
                         id="name"
+                        name="name"
                         value={formData.name}
                         onChange={(e) => handleInputChange("name", e.target.value)}
                         required
@@ -118,6 +119,7 @@ export default function GetAQuote() {
                       <Label htmlFor="email">Email Address *</Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => handleInputChange("email", e.target.value)}
@@ -129,6 +131,7 @@ export default function GetAQuote() {
                       <Label htmlFor="phone">Phone Number *</Label>
                       <Input
                         id="phone"
+                        name="phone"
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
@@ -140,6 +143,7 @@ export default function GetAQuote() {
                       <Label htmlFor="company">Company Name</Label>
                       <Input
                         id="company"
+                        name="company"
                         value={formData.company}
                         onChange={(e) => handleInputChange("company", e.target.value)}
                         className="mt-1"
@@ -204,6 +208,7 @@ export default function GetAQuote() {
                       <Label htmlFor="pickupLocation">Pickup Location *</Label>
                       <Input
                         id="pickupLocation"
+                        name="pickupLocation"
                         value={formData.pickupLocation}
                         onChange={(e) => handleInputChange("pickupLocation", e.target.value)}
                         placeholder="City, State or ZIP"
@@ -215,6 +220,7 @@ export default function GetAQuote() {
                       <Label htmlFor="deliveryLocation">Delivery Location *</Label>
                       <Input
                         id="deliveryLocation"
+                        name="deliveryLocation"
                         value={formData.deliveryLocation}
                         onChange={(e) => handleInputChange("deliveryLocation", e.target.value)}
                         placeholder="City, State or ZIP"
@@ -226,6 +232,7 @@ export default function GetAQuote() {
                       <Label htmlFor="pickupDate">Preferred Pickup Date</Label>
                       <Input
                         id="pickupDate"
+                        name="pickupDate"
                         type="date"
                         value={formData.pickupDate}
                         onChange={(e) => handleInputChange("pickupDate", e.target.value)}
@@ -236,6 +243,7 @@ export default function GetAQuote() {
                       <Label htmlFor="deliveryDate">Required Delivery Date</Label>
                       <Input
                         id="deliveryDate"
+                        name="deliveryDate"
                         type="date"
                         value={formData.deliveryDate}
                         onChange={(e) => handleInputChange("deliveryDate", e.target.value)}
@@ -253,6 +261,7 @@ export default function GetAQuote() {
                       <Label htmlFor="cargoType">Cargo Type/Description *</Label>
                       <Input
                         id="cargoType"
+                        name="cargoType"
                         value={formData.cargoType}
                         onChange={(e) => handleInputChange("cargoType", e.target.value)}
                         placeholder="e.g., Vehicle make/model, Equipment type"
@@ -264,6 +273,7 @@ export default function GetAQuote() {
                       <Label htmlFor="weight">Weight (lbs)</Label>
                       <Input
                         id="weight"
+                        name="weight"
                         type="number"
                         value={formData.weight}
                         onChange={(e) => handleInputChange("weight", e.target.value)}
@@ -275,6 +285,7 @@ export default function GetAQuote() {
                       <Label htmlFor="dimensions">Dimensions (L×W×H)</Label>
                       <Input
                         id="dimensions"
+                        name="dimensions"
                         value={formData.dimensions}
                         onChange={(e) => handleInputChange("dimensions", e.target.value)}
                         placeholder="e.g., 20×8×8 ft"
@@ -285,6 +296,7 @@ export default function GetAQuote() {
                       <Label htmlFor="value">Cargo Value ($)</Label>
                       <Input
                         id="value"
+                        name="value"
                         type="number"
                         value={formData.value}
                         onChange={(e) => handleInputChange("value", e.target.value)}
@@ -297,6 +309,7 @@ export default function GetAQuote() {
                     <Label htmlFor="specialRequirements">Special Requirements</Label>
                     <Textarea
                       id="specialRequirements"
+                      name="specialRequirements"
                       value={formData.specialRequirements}
                       onChange={(e) => handleInputChange("specialRequirements", e.target.value)}
                       placeholder="Any special handling, permits, or requirements..."
@@ -313,6 +326,7 @@ export default function GetAQuote() {
                     <div className="flex items-center space-x-2">
                       <Checkbox
                         id="insurance"
+                        name="insurance"
                         checked={formData.insurance}
                         onCheckedChange={(checked) => handleInputChange("insurance", checked as boolean)}
                       />
@@ -323,6 +337,7 @@ export default function GetAQuote() {
                     <div className="flex items-center space-x-2">
                       <Checkbox
                         id="tracking"
+                        name="tracking"
                         checked={formData.tracking}
                         onCheckedChange={(checked) => handleInputChange("tracking", checked as boolean)}
                       />
@@ -333,6 +348,7 @@ export default function GetAQuote() {
                     <div className="flex items-center space-x-2">
                       <Checkbox
                         id="expedited"
+                        name="expedited"
                         checked={formData.expedited}
                         onCheckedChange={(checked) => handleInputChange("expedited", checked as boolean)}
                       />

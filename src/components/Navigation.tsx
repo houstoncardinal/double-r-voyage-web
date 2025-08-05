@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, ArrowRight, Sparkles, ChevronDown, Truck, Shield, Package, Zap } from "lucide-react";
 
@@ -25,26 +26,28 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-20 lg:h-24">
           {/* Logo - Enhanced for mobile */}
           <div className="flex-shrink-0">
-            <h1 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent tracking-tight">
-              Double R{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                Transportation
-              </span>
-            </h1>
+            <Link to="/" className="cursor-pointer">
+              <h1 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent tracking-tight">
+                Double R{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                  Transportation
+                </span>
+              </h1>
+            </Link>
           </div>
 
           {/* Desktop Navigation - Enhanced */}
           <div className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="text-gray-700 hover:text-blue-600 px-4 py-4 text-base font-semibold transition-all duration-500 relative group tracking-wide"
                 >
                   {item.name}
                   <span className="absolute bottom-2 left-4 right-4 h-0.5 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full"></span>
-                </a>
+                </Link>
               ))}
               
               {/* Services Dropdown with Hover */}
@@ -61,9 +64,9 @@ export const Navigation = () => {
                     {serviceItems.map((service) => {
                       const Icon = service.icon;
                       return (
-                        <a
+                        <Link
                           key={service.name}
-                          href={service.href}
+                          to={service.href}
                           className="flex items-start space-x-3 p-4 rounded-xl hover:bg-blue-50 transition-colors duration-300 w-full block"
                         >
                           <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -73,7 +76,7 @@ export const Navigation = () => {
                             <div className="font-semibold text-gray-900">{service.name}</div>
                             <div className="text-sm text-gray-600">{service.description}</div>
                           </div>
-                        </a>
+                        </Link>
                       );
                     })}
                   </div>
@@ -84,13 +87,13 @@ export const Navigation = () => {
 
           {/* Action Buttons - Enhanced for mobile */}
           <div className="hidden md:flex space-x-3">
-            <a href="/get-a-quote">
+            <Link to="/get-a-quote">
               <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-xl luxury-shadow-xl hover:luxury-shadow-2xl transition-all duration-500 group font-semibold text-sm lg:text-base tracking-wide">
                 <Sparkles className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-500" />
                 Get A Quote
                 <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-500" />
               </Button>
-            </a>
+            </Link>
             <a href="tel:8322823128">
               <Button variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 lg:px-6 py-2 lg:py-3 rounded-xl luxury-shadow hover:luxury-shadow-xl transition-all duration-500 group font-semibold text-sm lg:text-base tracking-wide">
                 <Phone className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-500" />
@@ -120,15 +123,15 @@ export const Navigation = () => {
           <div className="md:hidden">
             <div className="px-4 pt-4 pb-6 space-y-3 glass-effect border-t border-white/20 rounded-b-3xl luxury-shadow-2xl animate-fade-in">
               {navItems.map((item, index) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 block px-6 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 animate-slide-in-left"
                   style={{ animationDelay: `${index * 0.1}s` }}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               
               {/* Mobile Services Section */}
@@ -137,9 +140,9 @@ export const Navigation = () => {
                 {serviceItems.map((service, index) => {
                   const Icon = service.icon;
                   return (
-                    <a
+                    <Link
                       key={service.name}
-                      href={service.href}
+                      to={service.href}
                       className="flex items-center space-x-3 px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 rounded-2xl transition-all duration-300 animate-slide-in-left"
                       style={{ animationDelay: `${(index + navItems.length) * 0.1}s` }}
                       onClick={() => setIsOpen(false)}
@@ -148,20 +151,20 @@ export const Navigation = () => {
                         <Icon className="h-4 w-4 text-white" />
                       </div>
                       <span className="font-medium">{service.name}</span>
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
               
               {/* Mobile Action Buttons */}
               <div className="pt-4 animate-slide-in-left border-t border-gray-200 space-y-3" style={{ animationDelay: '0.6s' }}>
-                <a href="/get-a-quote" className="block">
+                <Link to="/get-a-quote" className="block">
                   <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white py-4 rounded-2xl luxury-shadow-xl font-semibold text-lg tracking-wide group">
                     <Sparkles className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
                     Get A Quote
                     <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-500" />
                   </Button>
-                </a>
+                </Link>
                 <a href="tel:8322823128" className="block">
                   <Button variant="outline" className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white py-4 rounded-2xl luxury-shadow-xl font-semibold text-lg tracking-wide group">
                     <Phone className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform duration-500" />
