@@ -23,6 +23,16 @@
   }
 }
 
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -84,6 +94,10 @@
 
 .animate-slide-in-up {
   animation: slide-in-up 0.3s ease-out;
+}
+
+.animate-slide-up-modal {
+  animation: slide-up 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animate-float {
