@@ -153,3 +153,16 @@
 .menu__item.active {
   background: rgba(59, 130, 246, 0.15);
 }
+
+/* Marquee scrolling */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee-fast {
+  display: inline-block;
+  will-change: transform;
+  animation: marquee 24s linear infinite;
+}
+
