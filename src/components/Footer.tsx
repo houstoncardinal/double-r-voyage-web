@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Truck, Phone, Mail, MapPin, Star, ArrowRight, Sparkles } from "lucide-react";
+import CardinalConsultingCredit from "./CardinalConsultingCredit";
 export const Footer = React.memo(() => {
   return <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
       {/* Sophisticated background patterns */}
@@ -104,5 +105,12 @@ export const Footer = React.memo(() => {
           </div>
         </div>
       </div>
+      
+      {/* Cardinal Consulting Credit */}
+      <CardinalConsultingCredit 
+        textColor="text-gray-400"
+        linkColor="text-gray-300"
+        hoverColor="hover:text-green-400"
+      />
     </footer>;
 });
